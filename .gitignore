@@ -1,3 +1,4 @@
-autopk
-autopk/
-autopk/*
+/venv
+/venv/
+venv
+venv/

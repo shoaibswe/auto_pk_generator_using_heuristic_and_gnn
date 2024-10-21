@@ -3,18 +3,21 @@
 import re
 
 def check_column_uniqueness(table_name, column_name, conn):
-    query = f"SELECT COUNT(DISTINCT {column_name}) = COUNT({column_name}) FROM {table_name};"
+    # Escape the column name using double quotes
+    query = f'SELECT COUNT(DISTINCT "{column_name}") = COUNT("{column_name}") FROM {table_name};'
     with conn.cursor() as cur:
         cur.execute(query)
         result = cur.fetchone()
     return result[0]  # True if unique, False otherwise
 
 def check_column_non_null(table_name, column_name, conn):
-    query = f"SELECT COUNT({column_name}) = COUNT(*) FROM {table_name};"
+    # Escape the column name using double quotes
+    query = f'SELECT COUNT("{column_name}") = COUNT(*) FROM {table_name};'
     with conn.cursor() as cur:
         cur.execute(query)
         result = cur.fetchone()
     return result[0]  # True if no NULL values, False otherwise
+
 
 def heuristic_filtering(table_name, conn):
     with conn.cursor() as cur:
