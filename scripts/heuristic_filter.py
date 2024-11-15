@@ -1,67 +1,50 @@
 # heuristic_filter.py
-
 import re
+import pandas as pd
 
-def check_column_uniqueness(table_name, column_name, conn):
-    # Escape the column name using double quotes
-    query = f'SELECT COUNT(DISTINCT "{column_name}") = COUNT("{column_name}") FROM {table_name};'
-    with conn.cursor() as cur:
-        cur.execute(query)
-        result = cur.fetchone()
-    return result[0]  # True if unique, False otherwise
+def is_column_unique(df, column_name):
+    return df[column_name].nunique() == len(df)
 
-def check_column_non_null(table_name, column_name, conn):
-    # Escape the column name using double quotes
-    query = f'SELECT COUNT("{column_name}") = COUNT(*) FROM {table_name};'
-    with conn.cursor() as cur:
-        cur.execute(query)
-        result = cur.fetchone()
-    return result[0]  # True if no NULL values, False otherwise
+def is_column_non_null(df, column_name):
+    return df[column_name].isnull().sum() == 0
+
+def is_sequential(df, column_name):
+    sorted_vals = df[column_name].dropna().sort_values().values
+    if sorted_vals.dtype.kind in 'iuf':
+        diffs = sorted_vals[1:] - sorted_vals[:-1]
+        return (diffs == 1).all()
+    return False
+
+def is_uuid(df, column_name):
+    import re
+    uuid_pattern = re.compile(r'^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$', re.IGNORECASE)
+    return df[column_name].dropna().apply(lambda x: bool(uuid_pattern.match(str(x)))).all()
 
 
-def heuristic_filtering(table_name, conn):
-    with conn.cursor() as cur:
-        cur.execute(f"SELECT column_name FROM information_schema.columns WHERE table_name = '{table_name}'")
-        columns = cur.fetchall()
-        columns = [col[0] for col in columns]
+def heuristic_filtering(table_name, df, snapshots=None):
+    heuristic_scores = {}
+    candidate_columns = []
 
-        # Split the table name on underscores and spaces to detect parts
-        table_parts = re.split(r'[_\s]+', table_name.lower())
+    for col in df.columns:
+        score = 0
+        if is_column_unique(df, col):
+            score += 20
+        if is_column_non_null(df, col):
+            score += 10
+        if is_sequential(df, col):
+            score += 10
+        if is_uuid(df, col):
+            score += 5
+        if snapshots and has_column_changed(snapshots[0], snapshots[1], col):
+            score -= 20
 
-        # Detect potential ID columns by matching table parts
-        id_columns = [col for col in columns if any(part in col.lower() for part in table_parts)]
-        print(f"Detected columns from table parts: {id_columns}")
+        heuristic_scores[col] = score
+        if score > 30:  # Threshold to consider as a strong candidate
+            candidate_columns.append(col)
 
-        heuristic_scores = {}
-        candidate_columns = []
+    print(f"Heuristic scores for table '{table_name}': {heuristic_scores}")
+    return heuristic_scores, candidate_columns
 
-        for col in columns:
-            score = 0
-            if col in id_columns or '_id' in col.lower():
-                print(f"Considering column '{col}' for primary key based on naming conventions.")
 
-                is_unique = check_column_uniqueness(table_name, col, conn)
-                is_non_null = check_column_non_null(table_name, col, conn)
-
-                if is_unique and is_non_null:
-                    score += 20
-                    candidate_columns.append(col)
-                    print(f"Column '{col}' meets all conditions with score: {score}")
-                else:
-                    print(f"Column '{col}' failed at least one condition. Excluding from primary key candidates.")
-
-            heuristic_scores[col] = score
-
-        # Handle multi-word tables by suggesting composite keys
-        if len(candidate_columns) < 2 and len(id_columns) >= 2:
-            print(f"Table '{table_name}' is multi-word. Suggesting composite key.")
-            candidate_columns = [col for col in id_columns if col in columns]
-            heuristic_scores.update({col: 20 for col in candidate_columns})
-
-        if not candidate_columns:
-            surrogate_key = 'surrogate_id'
-            heuristic_scores[surrogate_key] = 30
-            print(f"Fallback to surrogate key '{surrogate_key}' with score 30.")
-
-        print(f"Final heuristic scores for table '{table_name}': {heuristic_scores}")
-        return heuristic_scores, candidate_columns
+def has_column_changed(snapshot1, snapshot2, column_name):
+    return not snapshot1[column_name].equals(snapshot2[column_name])

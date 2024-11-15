@@ -1,45 +1,28 @@
-from scripts.db_connector import connect_to_db
+#MAIN.PY
+from db_connector import connect_to_db
+from scripts.table_identifier import get_all_tables, get_table_columns, get_foreign_key_relationships
 from scripts.heuristic_filter import heuristic_filtering
+from scripts.gnn_pipeline import run_gnn_model
+from scripts.utils import load_table_data_as_dataframe
 
 def detect_primary_key_for_all_tables(conn):
-    cur = conn.cursor()
-
-    # Query to find tables in the public schema
-    cur.execute("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'")
-    tables = cur.fetchall()
-
-    for table in tables:
-        table_name = table[0]
-
-        # Check if the table already has a primary key
-        cur.execute(f"""
-            SELECT kcu.column_name
-            FROM information_schema.table_constraints tc
-            JOIN information_schema.key_column_usage kcu 
-            ON tc.constraint_name = kcu.constraint_name
-            WHERE tc.table_name = '{table_name}' AND tc.constraint_type = 'PRIMARY KEY'
-        """)
-        primary_key_columns = cur.fetchall()
-
-        # If the table already has a primary key, skip processing
-        if primary_key_columns:
-            print(f"Skipping table '{table_name}' because it already has a primary key.")
-            continue
-
+    tables = get_all_tables(conn)
+    for table_name in tables:
         print(f"Processing table: {table_name}")
 
-        # Get heuristic scores and candidate columns
-        heuristic_scores, candidate_columns = heuristic_filtering(table_name, conn)
+        df = load_table_data_as_dataframe(table_name, conn)
+        if df.empty:
+            print(f"Table '{table_name}' is empty or could not be loaded. Skipping.")
+            continue
 
-        # If candidate columns are found, avoid generating surrogate keys
-        if candidate_columns:
-            if len(candidate_columns) > 1:
-                print(f"Optimal Composite Key for table '{table_name}': {', '.join(candidate_columns)}")
-            else:
-                print(f"Optimal Primary Key for table '{table_name}': {candidate_columns[0]}")
-        else:
-            print(f"Warning: No suitable key found for table '{table_name}'. Please check manually.")
+        heuristic_scores, candidate_columns = heuristic_filtering(table_name, df)
+        relationships = get_foreign_key_relationships(table_name, conn)
+        combined_scores = run_gnn_model(table_name, df, heuristic_scores, relationships)
+
+        primary_key_candidates = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
+        print(f"Primary key candidates for table '{table_name}': {primary_key_candidates}")
         print("-----------")
+
 if __name__ == "__main__":
     conn = connect_to_db()
     if conn:

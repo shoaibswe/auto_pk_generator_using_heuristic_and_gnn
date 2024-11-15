@@ -7,38 +7,7 @@ def get_all_tables(conn):
         FROM information_schema.tables
         WHERE table_schema = 'public'
         """)
-        tables = [row[0] for row in cur.fetchall()]
-    return tables
-
-def has_primary_key(table_name, conn):
-    with conn.cursor() as cur:
-        cur.execute(f"""
-        SELECT EXISTS (
-            SELECT 1
-            FROM information_schema.table_constraints
-            WHERE table_name = '{table_name}' AND constraint_type = 'PRIMARY KEY'
-        )
-        """)
-        result = cur.fetchone()
-    return result[0]
-
-def get_foreign_key_relationships(table_name, conn):
-    with conn.cursor() as cur:
-        cur.execute(f"""
-        SELECT
-            tc.table_name, kcu.column_name, 
-            ccu.table_name AS foreign_table_name,
-            ccu.column_name AS foreign_column_name 
-        FROM 
-            information_schema.table_constraints AS tc 
-            JOIN information_schema.key_column_usage AS kcu
-              ON tc.constraint_name = kcu.constraint_name
-            JOIN information_schema.constraint_column_usage AS ccu
-              ON ccu.constraint_name = tc.constraint_name
-        WHERE constraint_type = 'FOREIGN KEY' AND tc.table_name='{table_name}';
-        """)
-        relationships = cur.fetchall()
-    return relationships
+        return [row[0] for row in cur.fetchall()]
 
 def get_table_columns(table_name, conn):
     with conn.cursor() as cur:
@@ -47,5 +16,24 @@ def get_table_columns(table_name, conn):
         FROM information_schema.columns
         WHERE table_name = '{table_name}';
         """)
-        columns = [row[0] for row in cur.fetchall()]
-    return columns
+        return [row[0] for row in cur.fetchall()]
+
+def get_foreign_key_relationships(table_name, conn):
+    with conn.cursor() as cur:
+        query = f"""
+        SELECT
+            kcu.column_name AS source_column,
+            ccu.table_name AS target_table,
+            ccu.column_name AS target_column
+        FROM 
+            information_schema.key_column_usage AS kcu
+        JOIN 
+            information_schema.constraint_column_usage AS ccu
+        ON 
+            kcu.constraint_name = ccu.constraint_name
+        WHERE 
+            kcu.table_schema = 'public' AND kcu.table_name = '{table_name}';
+        """
+        cur.execute(query)
+        relationships = cur.fetchall()
+    return [(rel[0], rel[2]) for rel in relationships]  # (source_column, target_column)
