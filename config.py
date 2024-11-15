@@ -1,22 +1,23 @@
 # config.py
 
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Database Configuration (only from environment variables)
 DATABASE = {
-    'host': 'localhost',
-    'database': 'postgres',  # Update this with your database name
-    'user': 'postgres',  # Update this with your database username
-    'password': '1234'  # Update this with your database password
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT")),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "database": os.getenv("DB_NAME"),
 }
 
 # GNN Model Parameters
 GNN_PARAMS = {
-    'in_feats': 10,
-    'hidden_size': 20,
-    'out_feats': 2
-}
-
-# Reinforcement Learning Parameters
-RL_PARAMS = {
-    'alpha': 0.1,  # Learning rate
-    'gamma': 0.9,  # Discount factor
-    'epsilon': 0.1  # Exploration-exploitation trade-off
+    "in_feats": 10,  # Number of input features
+    "hidden_size": 20,  # Size of hidden layer
+    "out_feats": 2,  # Number of output features
 }

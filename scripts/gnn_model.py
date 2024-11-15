@@ -1,5 +1,6 @@
 # gnn_model.py
 
+
 import torch
 from torch_geometric.nn import GCNConv
 import torch.nn.functional as F
