@@ -1,88 +1,58 @@
-# heuristic_filter.py
+import re
+import itertools
 
-from scripts.foreign_key_scoring import calculate_foreign_key_score
+def is_date_type(col_name):
+    name = str(col_name).lower().strip()
+    keywords = ['created', 'updated', 'modified', 'date', 'time', 'timestamp', 'ts', '_at']
+    return any(word in name for word in keywords)
 
+def get_priority_level(col_name):
+    name = str(col_name).lower().strip()
+    if name == 'id': return 1
+    if re.search(r'(_id|_key|uuid|pk|code|num|serial)$', name): return 2
+    return 3
 
-def is_column_unique(df, col):
-    """Check if a column contains only unique values."""
-    return df[col].is_unique
+def is_potential_fk(col_name, table_name):
+    """Detects if a column is likely a Foreign Key."""
+    name = str(col_name).lower().strip()
+    # If it contains '_id' but isn't just 'id' or '{table}_id', it's likely an FK
+    if '_id' in name or '_key' in name:
+        if name != 'id' and name != f"{table_name.lower()}_id":
+            return True
+    return False
 
+def run_hybrid_sieve(tables_data):
+    candidates = [] 
+    col_stats = {}
 
-def is_column_non_null(df, col):
-    """Check if a column does not contain any NULL values."""
-    return not df[col].isnull().any()
+    for table, df in tables_data.items():
+        if df.empty: continue
+        total_rows = len(df)
+        
+        # --- PHASE 1: Single ---
+        for col in df.columns:
+            is_uniq = df[col].nunique() == total_rows
+            not_null = not df[col].isnull().any()
+            
+            if is_uniq and not_null and not is_date_type(col):
+                level = get_priority_level(col)
+                h_score = 1.0 if level == 1 else (0.8 if level == 2 else 0.5)
+                candidates.append((table, (col,), level))
+                col_stats[(table, (col,))] = {
+                    'uniqueness': 1.0, 'level': level, 'h_score': h_score,
+                    'is_fk': is_potential_fk(col, table)
+                }
 
+        # --- PHASE 2: Composite ---
+        comp_ingredients = [c for c in df.columns if df[c].nunique() > 1]
+        for combo in itertools.combinations(comp_ingredients, 2):
+            if not df.duplicated(subset=list(combo)).any() and not df[list(combo)].isnull().any().any():
+                h_score = 0.45 
+                candidates.append((table, combo, 4))
+                col_stats[(table, combo)] = {
+                    'uniqueness': 1.0, 'level': 4, 'h_score': h_score,
+                    'is_fk': any(is_potential_fk(c, table) for c in combo)
+                }
+                if len([c for c in candidates if c[0] == table]) > 8: break
 
-def is_sequential(df, col):
-    """Check if a column contains sequential integer values."""
-    try:
-        col_data = df[col].dropna().astype(int)
-        return (col_data.diff().dropna() == 1).all()
-    except (ValueError, TypeError):
-        return False
-
-
-def is_uuid(df, column_name):
-    """Check if a column contains UUID-like values."""
-    import re
-
-    uuid_pattern = re.compile(
-        r"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$", re.IGNORECASE
-    )
-    return (
-        df[column_name].dropna().apply(lambda x: bool(uuid_pattern.match(str(x)))).all()
-    )
-
-
-def exclude_invalid_columns(df, valid_columns):
-    """Exclude columns that do not meet primary key characteristics."""
-    return [
-        col
-        for col in valid_columns
-        if is_column_non_null(df, col) and is_column_unique(df, col)
-    ]
-
-
-def heuristic_filtering_with_priority(table_name, df, df_b_tables):
-    """
-    Combined heuristic filtering with non-null checks, foreign key scoring, and cross-table validation.
-    :param table_name: Name of the table being processed.
-    :param df: DataFrame for the current table.
-    :param df_b_tables: List of tuples containing DataFrames and columns from other tables.
-                        Example: [(df_b1, "column_b1"), (df_b2, "column_b2")]
-    :return: Heuristic scores with combined adjustments.
-    """
-    heuristic_scores = {}
-    primary_key_characteristics = set()
-
-    for col in df.columns:
-        score = 0
-
-        # Exclude columns with NULL values
-        if not is_column_non_null(df, col):
-            continue
-
-        # Add uniqueness check
-        if is_column_unique(df, col):
-            score += 20  # Boost for uniqueness
-            primary_key_characteristics.add(col)
-
-        # Add sequential scoring (e.g., ID-like pattern)
-        if is_sequential(df, col):
-            score += 10  # Boost for sequential integer values
-
-        # Check if the column contains UUIDs
-        if is_uuid(df, col):
-            score += 10  # Boost for UUID-like patterns
-
-        # Add foreign key relationship scoring
-        for df_b, column_b in df_b_tables:
-            fk_score = calculate_foreign_key_score(df, col, df_b, column_b)
-            score += fk_score  # Add foreign key score if applicable
-
-        heuristic_scores[col] = score
-
-    # Exclude invalid columns based on primary key characteristics
-    valid_columns = exclude_invalid_columns(df, heuristic_scores.keys())
-
-    return heuristic_scores, valid_columns
+    return candidates, col_stats

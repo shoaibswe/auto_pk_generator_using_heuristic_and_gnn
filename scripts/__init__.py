@@ -5,6 +5,6 @@ from .table_identifier import (
     get_foreign_key_relationships,
     has_primary_key,
 )
-from .heuristic_filter import heuristic_filtering_with_priority
-from .gnn_pipeline import run_gnn_model
+from .heuristic_filter import run_hybrid_sieve
+from .gnn_pipeline import train_and_predict
 from .utils import load_table_data_as_dataframe

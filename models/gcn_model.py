@@ -1,14 +1,14 @@
-# gnn_model.py
-
+# codes/models/gcn_model.py
+# GCN-based (Graph Convolutional Network) model for primary key prediction
 
 import torch
 from torch_geometric.nn import GCNConv
 import torch.nn.functional as F
 
 
-class PrimaryKeyGNN(torch.nn.Module):
+class PrimaryKeyGCN(torch.nn.Module):
     def __init__(self, in_feats, hidden_size, out_feats):
-        super(PrimaryKeyGNN, self).__init__()
+        super(PrimaryKeyGCN, self).__init__()
         self.conv1 = GCNConv(in_feats, hidden_size)
         self.conv2 = GCNConv(hidden_size, out_feats)
         self.norm = torch.nn.BatchNorm1d(hidden_size)

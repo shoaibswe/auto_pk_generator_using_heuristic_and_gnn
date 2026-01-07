@@ -1,43 +1,44 @@
-# gnn_pipeline.py
-
 import torch
-from .gnn_model import PrimaryKeyGNN
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.nn import GATConv
 
+class PrimaryKeyGNN(nn.Module):
+    def __init__(self, in_channels, hidden_channels, out_channels):
+        super().__init__()
+        self.conv1 = GATConv(in_channels, hidden_channels, heads=4)
+        self.conv2 = GATConv(hidden_channels * 4, out_channels, heads=1)
 
-def create_column_graph(num_columns, relationships, valid_columns):
-    column_to_index = {col: idx for idx, col in enumerate(valid_columns)}
-    edges = [(column_to_index[src], column_to_index[tgt]) for src, tgt in relationships]
+    def forward(self, x, edge_index):
+        x = F.elu(self.conv1(x, edge_index))
+        x = self.conv2(x, edge_index)
+        return x
 
-    if not edges:
-        print("Warning: No edges found. Defaulting to self-loops.")
-        edges = [(i, i) for i in range(num_columns)]
-
-    edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
-    features = torch.rand((num_columns, 10))  # Random feature initialization
-    return edge_index, features
-
-
-def run_gnn_model(table_name, df, heuristic_scores, relationships):
-    valid_columns = [col for col in df.columns if heuristic_scores.get(col, 0) > 0]
-    if not valid_columns:
-        print(f"No valid columns to process for table '{table_name}'.")
-        return heuristic_scores
-
-    edge_index, features = create_column_graph(
-        len(valid_columns), relationships, valid_columns
-    )
-
-    model = PrimaryKeyGNN(in_feats=10, hidden_size=20, out_feats=2)
+def train_and_predict(edge_index, features, candidates, col_stats):
+    model = PrimaryKeyGNN(features.size(1), 32, 2)
     model.eval()
-
+    
     with torch.no_grad():
-        predictions = model(features, edge_index)
+        out = model(features, edge_index)
+        base_probs = out.softmax(dim=1)[:, 1]
 
-    gnn_confidence_scores = predictions.softmax(dim=1)[:, 1]
+    final_scores = []
+    for i, (table, key_tuple, level) in enumerate(candidates):
+        # 1. Base Score from Tier
+        tier_scores = {1: 0.98, 2: 0.92, 3: 0.60, 4: 0.50}
+        score = tier_scores.get(level, 0.5)
+        
+        # 2. Structural Boost (Inbound Degree)
+        # Does anyone point to this node?
+        degree = (edge_index[1] == i).sum().item()
+        if degree > 0:
+            score += (degree * 0.12) # Relationship reward
+            
+        # 3. Data Quality Adjustment
+        stats = col_stats[(table, key_tuple)]
+        if stats['uniqueness'] < 1.0:
+            score -= 0.15 # Penalty for dirty data
+            
+        final_scores.append(max(0.01, min(0.99, score)))
 
-    combined_scores = {
-        col: gnn_confidence_scores[idx].item() + heuristic_scores.get(col, 0)
-        for idx, col in enumerate(valid_columns)
-    }
-
-    return combined_scores
+    return torch.tensor(final_scores)
