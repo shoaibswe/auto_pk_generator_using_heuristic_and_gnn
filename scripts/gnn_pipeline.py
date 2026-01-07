@@ -1,7 +1,7 @@
 # gnn_pipeline.py
 
 import torch
-from models.gnn_model import PrimaryKeyGNN
+from .gnn_model import PrimaryKeyGNN
 
 
 def create_column_graph(num_columns, relationships, valid_columns):
