@@ -1,0 +1,83 @@
+{
+  "tpcds": {
+    "status": "ok",
+    "gt_unary_count": 102,
+    "gt_relation_count": 102,
+    "ind_only": {
+      "n": 5451,
+      "unary": {
+        "tp": 16,
+        "fp": 5435,
+        "fn": 86,
+        "precision": 0.002935241240139424,
+        "recall": 0.1568627450980392,
+        "f1": 0.005762650819376913
+      },
+      "all": {
+        "tp": 16,
+        "fp": 5435,
+        "fn": 86,
+        "precision": 0.002935241240139424,
+        "recall": 0.1568627450980392,
+        "f1": 0.005762650819376913
+      }
+    },
+    "ind_idscore": {
+      "n": 949,
+      "unary": {
+        "tp": 0,
+        "fp": 949,
+        "fn": 102,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "all": {
+        "tp": 0,
+        "fp": 949,
+        "fn": 102,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "ind_idscore_namesim_0_5": {
+      "n": 0,
+      "unary": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 102,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "all": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 102,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "ind_idscore_namesim_0_7": {
+      "n": 0,
+      "unary": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 102,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "all": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 102,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    }
+  }
+}

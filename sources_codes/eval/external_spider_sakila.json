@@ -1,0 +1,33 @@
+{
+  "dataset": "sakila",
+  "status": "ok",
+  "meta": {
+    "n_csv": 15,
+    "separator": ",",
+    "elapsed_sec": 0.84,
+    "exit": 0,
+    "stderr_tail": [],
+    "stdout_tail": [
+      "loadTime: 344",
+      "compareTime: 38",
+      "outputTime: 3",
+      "",
+      "Elapsed time: 0:00:00.405 (405 ms)."
+    ],
+    "raw_lines": 1013,
+    "inds_total": 1013,
+    "unary_inds_kept": 1013,
+    "self_inds_dropped": 0,
+    "result_file": "sakila_inds"
+  },
+  "spider_unary_inds": 1013,
+  "fk_unary": {
+    "tp": 22,
+    "fp": 991,
+    "fn": 18,
+    "precision": 0.02171767028627838,
+    "recall": 0.55,
+    "f1": 0.04178537511870845
+  },
+  "gt_unary_count": 40
+}

@@ -1,0 +1,129 @@
+{
+  "datasets": [
+    {
+      "dataset": "dvdrental",
+      "status": "ok",
+      "atomic_gt_pks_compared": 13,
+      "pre_patch_correct_atomic": 13,
+      "post_patch_correct_atomic": 13,
+      "pre_patch_uuid_picks": 0,
+      "tables_with_different_pick": 0,
+      "post_patch_only_match": 0,
+      "pre_patch_only_match": 0,
+      "diffs": []
+    },
+    {
+      "dataset": "chinook",
+      "status": "ok",
+      "atomic_gt_pks_compared": 10,
+      "pre_patch_correct_atomic": 10,
+      "post_patch_correct_atomic": 10,
+      "pre_patch_uuid_picks": 0,
+      "tables_with_different_pick": 0,
+      "post_patch_only_match": 0,
+      "pre_patch_only_match": 0,
+      "diffs": []
+    },
+    {
+      "dataset": "tpch",
+      "status": "ok",
+      "atomic_gt_pks_compared": 6,
+      "pre_patch_correct_atomic": 6,
+      "post_patch_correct_atomic": 6,
+      "pre_patch_uuid_picks": 0,
+      "tables_with_different_pick": 0,
+      "post_patch_only_match": 0,
+      "pre_patch_only_match": 0,
+      "diffs": []
+    },
+    {
+      "dataset": "adventureworks",
+      "status": "ok",
+      "atomic_gt_pks_compared": 45,
+      "pre_patch_correct_atomic": 44,
+      "post_patch_correct_atomic": 44,
+      "pre_patch_uuid_picks": 1,
+      "tables_with_different_pick": 1,
+      "post_patch_only_match": 0,
+      "pre_patch_only_match": 0,
+      "diffs": [
+        {
+          "table": "document",
+          "gt": "documentnode",
+          "pre": "rowguid",
+          "post": "Doc",
+          "pre_match": false,
+          "post_match": false
+        }
+      ]
+    },
+    {
+      "dataset": "sakila",
+      "status": "ok",
+      "atomic_gt_pks_compared": 13,
+      "pre_patch_correct_atomic": 13,
+      "post_patch_correct_atomic": 13,
+      "pre_patch_uuid_picks": 0,
+      "tables_with_different_pick": 0,
+      "post_patch_only_match": 0,
+      "pre_patch_only_match": 0,
+      "diffs": []
+    },
+    {
+      "dataset": "northwind",
+      "status": "ok",
+      "atomic_gt_pks_compared": 11,
+      "pre_patch_correct_atomic": 10,
+      "post_patch_correct_atomic": 10,
+      "pre_patch_uuid_picks": 0,
+      "tables_with_different_pick": 0,
+      "post_patch_only_match": 0,
+      "pre_patch_only_match": 0,
+      "diffs": []
+    }
+  ],
+  "summary": {
+    "dvdrental": {
+      "compared": 13,
+      "pre": 13,
+      "post": 13,
+      "differ": 0,
+      "pre_uuid_picks": 0
+    },
+    "chinook": {
+      "compared": 10,
+      "pre": 10,
+      "post": 10,
+      "differ": 0,
+      "pre_uuid_picks": 0
+    },
+    "tpch": {
+      "compared": 6,
+      "pre": 6,
+      "post": 6,
+      "differ": 0,
+      "pre_uuid_picks": 0
+    },
+    "adventureworks": {
+      "compared": 45,
+      "pre": 44,
+      "post": 44,
+      "differ": 1,
+      "pre_uuid_picks": 1
+    },
+    "sakila": {
+      "compared": 13,
+      "pre": 13,
+      "post": 13,
+      "differ": 0,
+      "pre_uuid_picks": 0
+    },
+    "northwind": {
+      "compared": 11,
+      "pre": 10,
+      "post": 10,
+      "differ": 0,
+      "pre_uuid_picks": 0
+    }
+  }
+}

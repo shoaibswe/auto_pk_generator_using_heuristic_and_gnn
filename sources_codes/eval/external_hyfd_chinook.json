@@ -1,0 +1,703 @@
+{
+  "dataset": "chinook",
+  "status": "ok",
+  "pk": {
+    "accuracy": 0.7272727272727273,
+    "correct": 8,
+    "scored": 11
+  },
+  "predicted_tables": 10,
+  "tables_with_ground_truth": 11,
+  "per_table": {
+    "album": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 18 ms",
+          "Elapsed time: 0:00:00.019 (19 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "asm_album_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "album_id"
+        ],
+        [
+          "artist_id",
+          "title"
+        ]
+      ],
+      "predicted_key": [
+        "album_id"
+      ]
+    },
+    "artist": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (2 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 2,
+        "fds_total": 2,
+        "result_file": "asm_artist_fds"
+      },
+      "status": "ok",
+      "n_fds": 2,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "artist_id"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "artist_id"
+      ]
+    },
+    "customer": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.36,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 4: 1 elements; (V)(C)(G); 1 intersections; 8 validations; 0 invalid; 0 new candidates; --> 8 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (345 FDs)",
+          "Time: 23 ms",
+          "Elapsed time: 0:00:00.024 (24 ms)."
+        ],
+        "raw_lines": 345,
+        "fds_total": 345,
+        "result_file": "asm_customer_fds"
+      },
+      "status": "ok",
+      "n_fds": 345,
+      "n_lhs_candidates": 40,
+      "n_superkeys": 34,
+      "candidate_keys": [
+        [
+          "address"
+        ],
+        [
+          "customer_id"
+        ],
+        [
+          "email"
+        ],
+        [
+          "phone"
+        ],
+        [
+          "postal_code"
+        ],
+        [
+          "city",
+          "last_name"
+        ],
+        [
+          "first_name",
+          "last_name"
+        ],
+        [
+          "city",
+          "company",
+          "country"
+        ],
+        [
+          "city",
+          "company",
+          "fax"
+        ],
+        [
+          "city",
+          "company",
+          "first_name"
+        ],
+        [
+          "city",
+          "company",
+          "state"
+        ],
+        [
+          "city",
+          "company",
+          "support_rep_id"
+        ],
+        [
+          "city",
+          "country",
+          "fax"
+        ],
+        [
+          "city",
+          "country",
+          "first_name"
+        ],
+        [
+          "city",
+          "country",
+          "state"
+        ],
+        [
+          "city",
+          "country",
+          "support_rep_id"
+        ],
+        [
+          "city",
+          "fax",
+          "first_name"
+        ],
+        [
+          "city",
+          "fax",
+          "state"
+        ],
+        [
+          "city",
+          "first_name",
+          "state"
+        ],
+        [
+          "company",
+          "country",
+          "state"
+        ],
+        [
+          "company",
+          "fax",
+          "first_name"
+        ],
+        [
+          "company",
+          "fax",
+          "last_name"
+        ],
+        [
+          "company",
+          "first_name",
+          "state"
+        ],
+        [
+          "company",
+          "last_name",
+          "state"
+        ],
+        [
+          "company",
+          "last_name",
+          "support_rep_id"
+        ],
+        [
+          "country",
+          "fax",
+          "first_name"
+        ],
+        [
+          "country",
+          "fax",
+          "last_name"
+        ],
+        [
+          "country",
+          "first_name",
+          "state"
+        ],
+        [
+          "country",
+          "last_name",
+          "state"
+        ],
+        [
+          "country",
+          "last_name",
+          "support_rep_id"
+        ],
+        [
+          "fax",
+          "first_name",
+          "state"
+        ],
+        [
+          "fax",
+          "last_name",
+          "state"
+        ],
+        [
+          "fax",
+          "last_name",
+          "support_rep_id"
+        ],
+        [
+          "company",
+          "fax",
+          "state",
+          "support_rep_id"
+        ]
+      ],
+      "predicted_key": [
+        "address"
+      ]
+    },
+    "employee": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 9 elements; (V)(C)(G); 9 intersections; 114 validations; 0 invalid; 0 new candidates; --> 114 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (255 FDs)",
+          "Time: 19 ms",
+          "Elapsed time: 0:00:00.020 (20 ms)."
+        ],
+        "raw_lines": 255,
+        "fds_total": 255,
+        "result_file": "asm_employee_fds"
+      },
+      "status": "ok",
+      "n_fds": 255,
+      "n_lhs_candidates": 20,
+      "n_superkeys": 19,
+      "candidate_keys": [
+        [
+          "address"
+        ],
+        [
+          "birth_date"
+        ],
+        [
+          "email"
+        ],
+        [
+          "employee_id"
+        ],
+        [
+          "fax"
+        ],
+        [
+          "hire_date"
+        ],
+        [
+          "last_name"
+        ],
+        [
+          "phone"
+        ],
+        [
+          "postal_code"
+        ],
+        [
+          "state"
+        ],
+        [
+          "city",
+          "country"
+        ],
+        [
+          "city",
+          "first_name"
+        ],
+        [
+          "city",
+          "reports_to"
+        ],
+        [
+          "country",
+          "first_name"
+        ],
+        [
+          "country",
+          "reports_to"
+        ],
+        [
+          "country",
+          "title"
+        ],
+        [
+          "first_name",
+          "reports_to"
+        ],
+        [
+          "first_name",
+          "title"
+        ],
+        [
+          "reports_to",
+          "title"
+        ]
+      ],
+      "predicted_key": [
+        "address"
+      ]
+    },
+    "genre": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (2 FDs)",
+          "Time: 13 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 2,
+        "fds_total": 2,
+        "result_file": "asm_genre_fds"
+      },
+      "status": "ok",
+      "n_fds": 2,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "genre_id"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "genre_id"
+      ]
+    },
+    "invoice": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.3,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 4 elements; (V)(C)(G); 4 intersections; 21 validations; 0 invalid; 0 new candidates; --> 21 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (70 FDs)",
+          "Time: 31 ms",
+          "Elapsed time: 0:00:00.031 (31 ms)."
+        ],
+        "raw_lines": 70,
+        "fds_total": 70,
+        "result_file": "asm_invoice_fds"
+      },
+      "status": "ok",
+      "n_fds": 70,
+      "n_lhs_candidates": 16,
+      "n_superkeys": 12,
+      "candidate_keys": [
+        [
+          "invoice_id"
+        ],
+        [
+          "billing_address",
+          "invoice_date"
+        ],
+        [
+          "billing_address",
+          "total"
+        ],
+        [
+          "billing_city",
+          "total"
+        ],
+        [
+          "billing_postal_code",
+          "invoice_date"
+        ],
+        [
+          "billing_postal_code",
+          "total"
+        ],
+        [
+          "customer_id",
+          "invoice_date"
+        ],
+        [
+          "customer_id",
+          "total"
+        ],
+        [
+          "invoice_date",
+          "total"
+        ],
+        [
+          "billing_city",
+          "billing_country",
+          "invoice_date"
+        ],
+        [
+          "billing_city",
+          "billing_state",
+          "invoice_date"
+        ],
+        [
+          "billing_country",
+          "billing_state",
+          "total"
+        ]
+      ],
+      "predicted_key": [
+        "invoice_id"
+      ]
+    },
+    "invoice_line": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (6 FDs)",
+          "Time: 36 ms",
+          "Elapsed time: 0:00:00.036 (36 ms)."
+        ],
+        "raw_lines": 6,
+        "fds_total": 6,
+        "result_file": "asm_invoice_line_fds"
+      },
+      "status": "ok",
+      "n_fds": 6,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "invoice_line_id"
+        ],
+        [
+          "invoice_id",
+          "track_id",
+          "unit_price"
+        ]
+      ],
+      "predicted_key": [
+        "invoice_line_id"
+      ]
+    },
+    "media_type": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.21,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (2 FDs)",
+          "Time: 13 ms",
+          "Elapsed time: 0:00:00.013 (13 ms)."
+        ],
+        "raw_lines": 2,
+        "fds_total": 2,
+        "result_file": "asm_media_type_fds"
+      },
+      "status": "ok",
+      "n_fds": 2,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "media_type_id"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "media_type_id"
+      ]
+    },
+    "playlist": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 1,
+        "fds_total": 1,
+        "result_file": "asm_playlist_fds"
+      },
+      "status": "ok",
+      "n_fds": 1,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "playlist_id"
+        ]
+      ],
+      "predicted_key": [
+        "playlist_id"
+      ]
+    },
+    "playlist_track": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.17,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 0: 1 elements; (V)(C)(G); 0 intersections; 0 validations; 0 invalid; 0 new candidates; --> 0 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (0 FDs)",
+          "Time: 35 ms",
+          "Elapsed time: 0:00:00.036 (36 ms)."
+        ],
+        "error": "no_result_file"
+      },
+      "status": "no_superkey",
+      "n_fds": 0,
+      "n_lhs_candidates": 0,
+      "predicted_key": null
+    },
+    "track": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 5: 1 elements; (V)(C)(G); 1 intersections; 4 validations; 0 invalid; 0 new candidates; --> 4 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (118 FDs)",
+          "Time: 55 ms",
+          "Elapsed time: 0:00:00.056 (56 ms)."
+        ],
+        "raw_lines": 118,
+        "fds_total": 118,
+        "result_file": "asm_track_fds"
+      },
+      "status": "ok",
+      "n_fds": 118,
+      "n_lhs_candidates": 21,
+      "n_superkeys": 19,
+      "candidate_keys": [
+        [
+          "track_id"
+        ],
+        [
+          "album_id",
+          "bytes"
+        ],
+        [
+          "bytes",
+          "composer"
+        ],
+        [
+          "bytes",
+          "genre_id"
+        ],
+        [
+          "bytes",
+          "media_type_id"
+        ],
+        [
+          "bytes",
+          "milliseconds"
+        ],
+        [
+          "bytes",
+          "name"
+        ],
+        [
+          "bytes",
+          "unit_price"
+        ],
+        [
+          "composer",
+          "milliseconds"
+        ],
+        [
+          "milliseconds",
+          "name"
+        ],
+        [
+          "album_id",
+          "genre_id",
+          "milliseconds"
+        ],
+        [
+          "album_id",
+          "media_type_id",
+          "milliseconds"
+        ],
+        [
+          "album_id",
+          "milliseconds",
+          "unit_price"
+        ],
+        [
+          "genre_id",
+          "media_type_id",
+          "milliseconds"
+        ],
+        [
+          "media_type_id",
+          "milliseconds",
+          "unit_price"
+        ],
+        [
+          "album_id",
+          "composer",
+          "genre_id",
+          "name"
+        ],
+        [
+          "album_id",
+          "composer",
+          "media_type_id",
+          "name"
+        ],
+        [
+          "album_id",
+          "composer",
+          "name",
+          "unit_price"
+        ],
+        [
+          "album_id",
+          "genre_id",
+          "media_type_id",
+          "name",
+          "unit_price"
+        ]
+      ],
+      "predicted_key": [
+        "track_id"
+      ]
+    }
+  }
+}

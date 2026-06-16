@@ -1,0 +1,17 @@
+{
+  "dvdrental": {
+    "status": "parse_error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "raw": ""
+  },
+  "chinook": {
+    "status": "parse_error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "raw": ""
+  },
+  "tpch": {
+    "status": "parse_error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "raw": ""
+  }
+}

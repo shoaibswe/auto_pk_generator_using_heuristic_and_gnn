@@ -1,0 +1,33 @@
+{
+  "dataset": "chinook",
+  "status": "ok",
+  "meta": {
+    "n_csv": 11,
+    "separator": ",",
+    "elapsed_sec": 0.75,
+    "exit": 0,
+    "stderr_tail": [],
+    "stdout_tail": [
+      "naryLoadTime: null",
+      "naryCompareTime: null",
+      "outputTime: 1",
+      "",
+      "Elapsed time: 0:00:00.336 (336 ms)."
+    ],
+    "raw_lines": 198,
+    "binder_inds_total": 198,
+    "unary_inds_kept": 198,
+    "self_inds_dropped": 0,
+    "result_file": "chinook_inds"
+  },
+  "binder_unary_inds": 198,
+  "fk_unary": {
+    "tp": 11,
+    "fp": 187,
+    "fn": 0,
+    "precision": 0.05555555555555555,
+    "recall": 1.0,
+    "f1": 0.10526315789473684
+  },
+  "gt_unary_count": 11
+}

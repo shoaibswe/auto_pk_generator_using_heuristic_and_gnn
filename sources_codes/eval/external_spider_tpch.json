@@ -1,0 +1,33 @@
+{
+  "dataset": "tpch",
+  "status": "ok",
+  "meta": {
+    "n_csv": 8,
+    "separator": ",",
+    "elapsed_sec": 1.65,
+    "exit": 0,
+    "stderr_tail": [],
+    "stdout_tail": [
+      "loadTime: 1305",
+      "compareTime: 51",
+      "outputTime: 3",
+      "",
+      "Elapsed time: 0:00:01.378 (1378 ms)."
+    ],
+    "raw_lines": 101,
+    "inds_total": 101,
+    "unary_inds_kept": 101,
+    "self_inds_dropped": 0,
+    "result_file": "tpch_inds"
+  },
+  "spider_unary_inds": 101,
+  "fk_unary": {
+    "tp": 7,
+    "fp": 94,
+    "fn": 0,
+    "precision": 0.06930693069306931,
+    "recall": 1.0,
+    "f1": 0.12962962962962962
+  },
+  "gt_unary_count": 7
+}

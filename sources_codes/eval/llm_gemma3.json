@@ -1,0 +1,98 @@
+{
+  "dvdrental": {
+    "status": "ok",
+    "model": "gemma3:12b",
+    "pk": {
+      "accuracy": 1.0,
+      "correct": 15,
+      "scored": 15
+    },
+    "fk_unary": {
+      "tp": 18,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "fk_all": {
+      "tp": 18,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "counts": {
+      "pred_fk_components": 18,
+      "pred_fk_relations": 18,
+      "gt_fk_unary": 18,
+      "gt_fk_components": 18,
+      "gt_fk_relations": 18
+    }
+  },
+  "chinook": {
+    "status": "ok",
+    "model": "gemma3:12b",
+    "pk": {
+      "accuracy": 1.0,
+      "correct": 11,
+      "scored": 11
+    },
+    "fk_unary": {
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "fk_all": {
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "counts": {
+      "pred_fk_components": 11,
+      "pred_fk_relations": 11,
+      "gt_fk_unary": 11,
+      "gt_fk_components": 11,
+      "gt_fk_relations": 11
+    }
+  },
+  "tpch": {
+    "status": "ok",
+    "model": "gemma3:12b",
+    "pk": {
+      "accuracy": 1.0,
+      "correct": 8,
+      "scored": 8
+    },
+    "fk_unary": {
+      "tp": 7,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1": 0.8750000000000001
+    },
+    "fk_all": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "counts": {
+      "pred_fk_components": 9,
+      "pred_fk_relations": 8,
+      "gt_fk_unary": 7,
+      "gt_fk_components": 9,
+      "gt_fk_relations": 8
+    }
+  }
+}

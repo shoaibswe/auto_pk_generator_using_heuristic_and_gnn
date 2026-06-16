@@ -1,0 +1,35 @@
+{
+  "tpcds": {
+    "dataset": "tpcds",
+    "status": "ok",
+    "fk_unary": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 86,
+      "precision": 1.0,
+      "recall": 0.1568627450980392,
+      "f1": 0.2711864406779661
+    },
+    "fk_all": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 86,
+      "precision": 1.0,
+      "recall": 0.1568627450980392,
+      "f1": 0.2711864406779661
+    },
+    "pk": {
+      "accuracy": 0.3333333333333333,
+      "correct": 8,
+      "scored": 24
+    },
+    "counts": {
+      "gt_fk_components": 102,
+      "gt_fk_unary": 102,
+      "gt_fk_relations": 102,
+      "pred_fk_components": 16,
+      "pred_fk_relations": 16,
+      "gt_pk_tables": 24
+    }
+  }
+}

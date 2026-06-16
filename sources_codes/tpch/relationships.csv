@@ -1,0 +1,10 @@
+Source Table,Source Col,Target Table,Target Col,Confidence,Inclusion_A_to_B,Inclusion_B_to_A,Jaccard,Reason
+asm_lineitem,['l_orderkey'],asm_orders,o_orderkey,0.83,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90"
+asm_nation,['n_regionkey'],asm_region,r_regionkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_supplier,['s_nationkey'],asm_nation,n_nationkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_customer,['c_nationkey'],asm_nation,n_nationkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_partsupp,['ps_suppkey'],asm_supplier,s_suppkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_lineitem,['l_suppkey'],asm_supplier,s_suppkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_orders,['o_custkey'],asm_customer,c_custkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_partsupp,['ps_partkey'],asm_part,p_partkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"
+asm_lineitem,['l_partkey'],asm_part,p_partkey,0.79,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70"

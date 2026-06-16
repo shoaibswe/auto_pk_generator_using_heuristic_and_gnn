@@ -1,0 +1,2897 @@
+{
+  "dataset": "adventureworks",
+  "status": "ok",
+  "pk": {
+    "accuracy": 0.35294117647058826,
+    "correct": 24,
+    "scored": 68
+  },
+  "predicted_tables": 63,
+  "tables_with_ground_truth": 68,
+  "per_table": {
+    "address": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.45,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (44 FDs)",
+          "Time: 212 ms",
+          "Elapsed time: 0:00:00.212 (212 ms)."
+        ],
+        "raw_lines": 44,
+        "fds_total": 44,
+        "result_file": "Address_fds"
+      },
+      "status": "ok",
+      "n_fds": 44,
+      "n_lhs_candidates": 11,
+      "n_superkeys": 7,
+      "candidate_keys": [
+        [
+          "addressid"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "addressline1",
+          "city",
+          "spatiallocation"
+        ],
+        [
+          "addressline1",
+          "modifieddate",
+          "spatiallocation"
+        ],
+        [
+          "addressline1",
+          "postalcode",
+          "spatiallocation"
+        ],
+        [
+          "addressline1",
+          "addressline2",
+          "modifieddate",
+          "postalcode"
+        ],
+        [
+          "addressline1",
+          "addressline2",
+          "postalcode",
+          "stateprovinceid"
+        ]
+      ],
+      "predicted_key": [
+        "addressid"
+      ]
+    },
+    "addresstype": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (7 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 7,
+        "fds_total": 7,
+        "result_file": "AddressType_fds"
+      },
+      "status": "ok",
+      "n_fds": 7,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "addresstypeid"
+        ],
+        [
+          "name"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "addresstypeid"
+      ]
+    },
+    "billofmaterials": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.29,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 6 elements; (V)(C)(G); 6 intersections; 14 validations; 0 invalid; 0 new candidates; --> 14 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (32 FDs)",
+          "Time: 54 ms",
+          "Elapsed time: 0:00:00.054 (54 ms)."
+        ],
+        "raw_lines": 32,
+        "fds_total": 32,
+        "result_file": "BillOfMaterials_fds"
+      },
+      "status": "ok",
+      "n_fds": 32,
+      "n_lhs_candidates": 15,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "billofmaterialsid"
+        ],
+        [
+          "componentid",
+          "enddate",
+          "productassemblyid"
+        ],
+        [
+          "componentid",
+          "modifieddate",
+          "productassemblyid"
+        ],
+        [
+          "componentid",
+          "productassemblyid",
+          "startdate"
+        ]
+      ],
+      "predicted_key": [
+        "billofmaterialsid"
+      ]
+    },
+    "businessentity": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.3,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (6 FDs)",
+          "Time: 90 ms",
+          "Elapsed time: 0:00:00.090 (90 ms)."
+        ],
+        "raw_lines": 6,
+        "fds_total": 6,
+        "result_file": "BusinessEntity_fds"
+      },
+      "status": "ok",
+      "n_fds": 6,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "modifieddate"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "businessentityaddress": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (11 FDs)",
+          "Time: 113 ms",
+          "Elapsed time: 0:00:00.113 (113 ms)."
+        ],
+        "raw_lines": 11,
+        "fds_total": 11,
+        "result_file": "BusinessEntityAddress_fds"
+      },
+      "status": "ok",
+      "n_fds": 11,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "addressid"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "addresstypeid",
+          "businessentityid"
+        ]
+      ],
+      "predicted_key": [
+        "addressid"
+      ]
+    },
+    "businessentitycontact": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (11 FDs)",
+          "Time: 27 ms",
+          "Elapsed time: 0:00:00.027 (27 ms)."
+        ],
+        "raw_lines": 11,
+        "fds_total": 11,
+        "result_file": "BusinessEntityContact_fds"
+      },
+      "status": "ok",
+      "n_fds": 11,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "personid"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "businessentityid",
+          "contacttypeid"
+        ]
+      ],
+      "predicted_key": [
+        "personid"
+      ]
+    },
+    "contacttype": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "ContactType_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "contacttypeid"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "contacttypeid"
+      ]
+    },
+    "countryregion": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 17 ms",
+          "Elapsed time: 0:00:00.017 (17 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "CountryRegion_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "countryregioncode"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "countryregioncode"
+      ]
+    },
+    "countryregioncurrency": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1 FDs)",
+          "Time: 17 ms",
+          "Elapsed time: 0:00:00.017 (17 ms)."
+        ],
+        "raw_lines": 1,
+        "fds_total": 1,
+        "result_file": "CountryRegionCurrency_fds"
+      },
+      "status": "ok",
+      "n_fds": 1,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "countryregioncode",
+          "currencycode"
+        ]
+      ],
+      "predicted_key": [
+        "countryregioncode",
+        "currencycode"
+      ]
+    },
+    "creditcard": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.35,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 10 intersections; 10 validations; 0 invalid; 0 new candidates; --> 10 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (10 FDs)",
+          "Time: 132 ms",
+          "Elapsed time: 0:00:00.132 (132 ms)."
+        ],
+        "raw_lines": 10,
+        "fds_total": 10,
+        "result_file": "CreditCard_fds"
+      },
+      "status": "ok",
+      "n_fds": 10,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "cardnumber"
+        ],
+        [
+          "creditcardid"
+        ]
+      ],
+      "predicted_key": [
+        "cardnumber"
+      ]
+    },
+    "culture": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 13 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "Culture_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "cultureid"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "cultureid"
+      ]
+    },
+    "currency": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "Currency_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "currencycode"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "currencycode"
+      ]
+    },
+    "currencyrate": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (18 FDs)",
+          "Time: 125 ms",
+          "Elapsed time: 0:00:00.125 (125 ms)."
+        ],
+        "raw_lines": 18,
+        "fds_total": 18,
+        "result_file": "CurrencyRate_fds"
+      },
+      "status": "ok",
+      "n_fds": 18,
+      "n_lhs_candidates": 7,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "currencyrateid"
+        ],
+        [
+          "currencyratedate",
+          "tocurrencycode"
+        ],
+        [
+          "averagerate",
+          "currencyratedate",
+          "modifieddate"
+        ],
+        [
+          "currencyratedate",
+          "endofdayrate",
+          "modifieddate"
+        ]
+      ],
+      "predicted_key": [
+        "currencyrateid"
+      ]
+    },
+    "customer": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.36,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 4 validations; 0 invalid; 0 new candidates; --> 4 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (20 FDs)",
+          "Time: 133 ms",
+          "Elapsed time: 0:00:00.133 (133 ms)."
+        ],
+        "raw_lines": 20,
+        "fds_total": 20,
+        "result_file": "Customer_fds"
+      },
+      "status": "ok",
+      "n_fds": 20,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "accountnumber"
+        ],
+        [
+          "customerid"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "personid",
+          "storeid"
+        ]
+      ],
+      "predicted_key": [
+        "accountnumber"
+      ]
+    },
+    "department": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 4 intersections; 4 validations; 0 invalid; 0 new candidates; --> 4 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (5 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 5,
+        "fds_total": 5,
+        "result_file": "Department_fds"
+      },
+      "status": "ok",
+      "n_fds": 5,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "departmentid"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "departmentid"
+      ]
+    },
+    "document": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 11 elements; (V)(C)(G); 11 intersections; 36 validations; 0 invalid; 0 new candidates; --> 36 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (143 FDs)",
+          "Time: 43 ms",
+          "Elapsed time: 0:00:00.043 (43 ms)."
+        ],
+        "raw_lines": 143,
+        "fds_total": 143,
+        "result_file": "Document_fds"
+      },
+      "status": "ok",
+      "n_fds": 143,
+      "n_lhs_candidates": 32,
+      "n_superkeys": 9,
+      "candidate_keys": [
+        [
+          "doc"
+        ],
+        [
+          "filename"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "title"
+        ],
+        [
+          "changenumber",
+          "modifieddate"
+        ],
+        [
+          "document",
+          "modifieddate"
+        ],
+        [
+          "modifieddate",
+          "revision"
+        ],
+        [
+          "documentsummary",
+          "modifieddate",
+          "owner"
+        ],
+        [
+          "documentsummary",
+          "modifieddate",
+          "status"
+        ]
+      ],
+      "predicted_key": [
+        "doc"
+      ]
+    },
+    "emailaddress": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.34,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 4 elements; (V)(C)(G); 16 intersections; 16 validations; 0 invalid; 0 new candidates; --> 16 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (16 FDs)",
+          "Time: 119 ms",
+          "Elapsed time: 0:00:00.119 (119 ms)."
+        ],
+        "raw_lines": 16,
+        "fds_total": 16,
+        "result_file": "EmailAddress_fds"
+      },
+      "status": "ok",
+      "n_fds": 16,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "emailaddress"
+        ],
+        [
+          "emailaddressid"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "employee": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 4: 3 elements; (V)(C)(G); 3 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (156 FDs)",
+          "Time: 33 ms",
+          "Elapsed time: 0:00:00.033 (33 ms)."
+        ],
+        "raw_lines": 156,
+        "fds_total": 156,
+        "result_file": "Employee_fds"
+      },
+      "status": "ok",
+      "n_fds": 156,
+      "n_lhs_candidates": 27,
+      "n_superkeys": 11,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "loginid"
+        ],
+        [
+          "nationalidnumber"
+        ],
+        [
+          "org"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "birthdate",
+          "sickleavehours"
+        ],
+        [
+          "birthdate",
+          "vacationhours"
+        ],
+        [
+          "jobtitle",
+          "vacationhours"
+        ],
+        [
+          "birthdate",
+          "gender",
+          "hiredate"
+        ],
+        [
+          "birthdate",
+          "hiredate",
+          "maritalstatus"
+        ],
+        [
+          "gender",
+          "hiredate",
+          "vacationhours"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "employeedepartmenthistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 1 elements; (V)(C)(G); 1 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (16 FDs)",
+          "Time: 23 ms",
+          "Elapsed time: 0:00:00.023 (23 ms)."
+        ],
+        "raw_lines": 16,
+        "fds_total": 16,
+        "result_file": "EmployeeDepartmentHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 16,
+      "n_lhs_candidates": 8,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "businessentityid",
+          "departmentid"
+        ],
+        [
+          "businessentityid",
+          "enddate"
+        ],
+        [
+          "businessentityid",
+          "modifieddate"
+        ],
+        [
+          "businessentityid",
+          "startdate"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid",
+        "departmentid"
+      ]
+    },
+    "employeepayhistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 4 elements; (V)(C)(G); 4 intersections; 7 validations; 0 invalid; 0 new candidates; --> 7 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (8 FDs)",
+          "Time: 24 ms",
+          "Elapsed time: 0:00:00.024 (24 ms)."
+        ],
+        "raw_lines": 8,
+        "fds_total": 8,
+        "result_file": "EmployeePayHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 8,
+      "n_lhs_candidates": 5,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "businessentityid",
+          "modifieddate"
+        ],
+        [
+          "businessentityid",
+          "rate"
+        ],
+        [
+          "businessentityid",
+          "ratechangedate"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid",
+        "modifieddate"
+      ]
+    },
+    "illustration": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (6 FDs)",
+          "Time: 27 ms",
+          "Elapsed time: 0:00:00.027 (27 ms)."
+        ],
+        "raw_lines": 6,
+        "fds_total": 6,
+        "result_file": "Illustration_fds"
+      },
+      "status": "ok",
+      "n_fds": 6,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "diagram"
+        ],
+        [
+          "illustrationid"
+        ],
+        [
+          "modifieddate"
+        ]
+      ],
+      "predicted_key": [
+        "diagram"
+      ]
+    },
+    "jobcandidate": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 4 elements; (V)(C)(G); 8 intersections; 8 validations; 0 invalid; 0 new candidates; --> 8 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (8 FDs)",
+          "Time: 23 ms",
+          "Elapsed time: 0:00:00.023 (23 ms)."
+        ],
+        "raw_lines": 8,
+        "fds_total": 8,
+        "result_file": "JobCandidate_fds"
+      },
+      "status": "ok",
+      "n_fds": 8,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "jobcandidateid"
+        ],
+        [
+          "resume"
+        ]
+      ],
+      "predicted_key": [
+        "jobcandidateid"
+      ]
+    },
+    "location": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 7 intersections; 7 validations; 0 invalid; 0 new candidates; --> 7 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (8 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 8,
+        "fds_total": 8,
+        "result_file": "Location_fds"
+      },
+      "status": "ok",
+      "n_fds": 8,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "locationid"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "locationid"
+      ]
+    },
+    "password": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.33,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 4 elements; (V)(C)(G); 16 intersections; 16 validations; 0 invalid; 0 new candidates; --> 16 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (16 FDs)",
+          "Time: 126 ms",
+          "Elapsed time: 0:00:00.126 (126 ms)."
+        ],
+        "raw_lines": 16,
+        "fds_total": 16,
+        "result_file": "Password_fds"
+      },
+      "status": "ok",
+      "n_fds": 16,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "passwordhash"
+        ],
+        [
+          "passwordsalt"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "person": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.66,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 6: 1 elements; (V)(C)(G); 1 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (56 FDs)",
+          "Time: 404 ms",
+          "Elapsed time: 0:00:00.405 (405 ms)."
+        ],
+        "raw_lines": 56,
+        "fds_total": 56,
+        "result_file": "Person_fds"
+      },
+      "status": "ok",
+      "n_fds": 56,
+      "n_lhs_candidates": 30,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "firstname",
+          "lastname",
+          "modifieddate",
+          "persontype"
+        ],
+        [
+          "demographics",
+          "emailpromotion",
+          "firstname",
+          "middlename",
+          "modifieddate",
+          "persontype"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "personcreditcard": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.3,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 4 intersections; 4 validations; 0 invalid; 0 new candidates; --> 4 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (4 FDs)",
+          "Time: 92 ms",
+          "Elapsed time: 0:00:00.092 (92 ms)."
+        ],
+        "raw_lines": 4,
+        "fds_total": 4,
+        "result_file": "PersonCreditCard_fds"
+      },
+      "status": "ok",
+      "n_fds": 4,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "creditcardid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "personphone": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.32,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 3 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 112 ms",
+          "Elapsed time: 0:00:00.112 (112 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "PersonPhone_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "phonenumbertype": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "PhoneNumberType_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "phonenumbertypeid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "product": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.54,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 7: 9 elements; (V)(C)(G); 9 intersections; 9 validations; 0 invalid; 0 new candidates; --> 9 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (293 FDs)",
+          "Time: 78 ms",
+          "Elapsed time: 0:00:00.078 (78 ms)."
+        ],
+        "raw_lines": 293,
+        "fds_total": 293,
+        "result_file": "Product_fds"
+      },
+      "status": "ok",
+      "n_fds": 293,
+      "n_lhs_candidates": 178,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "productid"
+        ],
+        [
+          "productnumber"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "productcategory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (7 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 7,
+        "fds_total": 7,
+        "result_file": "ProductCategory_fds"
+      },
+      "status": "ok",
+      "n_fds": 7,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "productcategoryid"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "productcosthistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 4 elements; (V)(C)(G); 4 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (12 FDs)",
+          "Time: 25 ms",
+          "Elapsed time: 0:00:00.025 (25 ms)."
+        ],
+        "raw_lines": 12,
+        "fds_total": 12,
+        "result_file": "ProductCostHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 12,
+      "n_lhs_candidates": 7,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "enddate",
+          "productid"
+        ],
+        [
+          "modifieddate",
+          "productid"
+        ],
+        [
+          "productid",
+          "standardcost"
+        ],
+        [
+          "productid",
+          "startdate"
+        ]
+      ],
+      "predicted_key": [
+        "enddate",
+        "productid"
+      ]
+    },
+    "productdescription": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 7 intersections; 7 validations; 0 invalid; 0 new candidates; --> 7 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (7 FDs)",
+          "Time: 28 ms",
+          "Elapsed time: 0:00:00.029 (29 ms)."
+        ],
+        "raw_lines": 7,
+        "fds_total": 7,
+        "result_file": "ProductDescription_fds"
+      },
+      "status": "ok",
+      "n_fds": 7,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "productdescriptionid"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "productdescriptionid"
+      ]
+    },
+    "productdocument": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 1,
+        "fds_total": 1,
+        "result_file": "ProductDocument_fds"
+      },
+      "status": "no_superkey",
+      "n_fds": 1,
+      "n_lhs_candidates": 1,
+      "predicted_key": null
+    },
+    "productinventory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 2 elements; (V)(C)(G); 2 intersections; 8 validations; 0 invalid; 0 new candidates; --> 8 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (15 FDs)",
+          "Time: 38 ms",
+          "Elapsed time: 0:00:00.038 (38 ms)."
+        ],
+        "raw_lines": 15,
+        "fds_total": 15,
+        "result_file": "ProductInventory_fds"
+      },
+      "status": "ok",
+      "n_fds": 15,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "locationid",
+          "productid"
+        ],
+        [
+          "productid",
+          "quantity"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "productlistpricehistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 3 elements; (V)(C)(G); 3 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (9 FDs)",
+          "Time: 25 ms",
+          "Elapsed time: 0:00:00.026 (26 ms)."
+        ],
+        "raw_lines": 9,
+        "fds_total": 9,
+        "result_file": "ProductListPriceHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 9,
+      "n_lhs_candidates": 6,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "enddate",
+          "productid"
+        ],
+        [
+          "modifieddate",
+          "productid"
+        ],
+        [
+          "productid",
+          "startdate"
+        ]
+      ],
+      "predicted_key": [
+        "enddate",
+        "productid"
+      ]
+    },
+    "productmodel": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 12 intersections; 12 validations; 0 invalid; 0 new candidates; --> 12 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (13 FDs)",
+          "Time: 21 ms",
+          "Elapsed time: 0:00:00.022 (22 ms)."
+        ],
+        "raw_lines": 13,
+        "fds_total": 13,
+        "result_file": "ProductModel_fds"
+      },
+      "status": "ok",
+      "n_fds": 13,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "productmodelid"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "productmodelillustration": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (2 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 2,
+        "fds_total": 2,
+        "result_file": "ProductModelIllustration_fds"
+      },
+      "status": "no_superkey",
+      "n_fds": 2,
+      "n_lhs_candidates": 2,
+      "predicted_key": null
+    },
+    "productmodelproductdescriptionculture": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (4 FDs)",
+          "Time: 27 ms",
+          "Elapsed time: 0:00:00.027 (27 ms)."
+        ],
+        "raw_lines": 4,
+        "fds_total": 4,
+        "result_file": "ProductModelProductDescriptionCulture_fds"
+      },
+      "status": "ok",
+      "n_fds": 4,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "productdescriptionid"
+        ],
+        [
+          "cultureid",
+          "productmodelid"
+        ]
+      ],
+      "predicted_key": [
+        "productdescriptionid"
+      ]
+    },
+    "productphoto": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.3,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 5 elements; (V)(C)(G); 25 intersections; 25 validations; 0 invalid; 0 new candidates; --> 25 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (25 FDs)",
+          "Time: 82 ms",
+          "Elapsed time: 0:00:00.082 (82 ms)."
+        ],
+        "raw_lines": 25,
+        "fds_total": 25,
+        "result_file": "ProductPhoto_fds"
+      },
+      "status": "ok",
+      "n_fds": 25,
+      "n_lhs_candidates": 5,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "largephoto"
+        ],
+        [
+          "largephotofilename"
+        ],
+        [
+          "productphotoid"
+        ],
+        [
+          "thumbnailphoto"
+        ],
+        [
+          "thumbnailphotofilename"
+        ]
+      ],
+      "predicted_key": [
+        "largephoto"
+      ]
+    },
+    "productproductphoto": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.21,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Initializing algorithm.",
+          "Initializing ...",
+          "Reading data and calculating plis ...",
+          "Time: 8 ms",
+          "Elapsed time: 0:00:00.008 (8 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "ProductProductPhoto_fds"
+      },
+      "status": "no_superkey",
+      "n_fds": 3,
+      "n_lhs_candidates": 0,
+      "predicted_key": null
+    },
+    "productreview": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Initializing algorithm.",
+          "Initializing ...",
+          "Reading data and calculating plis ...",
+          "Time: 6 ms",
+          "Elapsed time: 0:00:00.006 (6 ms)."
+        ],
+        "raw_lines": 8,
+        "fds_total": 8,
+        "result_file": "ProductReview_fds"
+      },
+      "status": "no_superkey",
+      "n_fds": 8,
+      "n_lhs_candidates": 0,
+      "predicted_key": null
+    },
+    "productsubcategory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 9 intersections; 9 validations; 0 invalid; 0 new candidates; --> 9 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (10 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 10,
+        "fds_total": 10,
+        "result_file": "ProductSubcategory_fds"
+      },
+      "status": "ok",
+      "n_fds": 10,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "productsubcategoryid"
+        ],
+        [
+          "rowguid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "productvendor": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.3,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 5: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (79 FDs)",
+          "Time: 37 ms",
+          "Elapsed time: 0:00:00.037 (37 ms)."
+        ],
+        "raw_lines": 79,
+        "fds_total": 79,
+        "result_file": "ProductVendor_fds"
+      },
+      "status": "ok",
+      "n_fds": 79,
+      "n_lhs_candidates": 47,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "businessentityid",
+          "productid"
+        ],
+        [
+          "lastreceiptcost",
+          "lastreceiptdate",
+          "productid"
+        ],
+        [
+          "lastreceiptcost",
+          "modifieddate",
+          "productid"
+        ],
+        [
+          "lastreceiptdate",
+          "productid",
+          "standardprice"
+        ],
+        [
+          "modifieddate",
+          "productid",
+          "standardprice"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid",
+        "productid"
+      ]
+    },
+    "purchaseorderdetail": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.42,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 13 elements; (V)(C)(G); 13 intersections; 22 validations; 0 invalid; 0 new candidates; --> 22 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (62 FDs)",
+          "Time: 166 ms",
+          "Elapsed time: 0:00:00.166 (166 ms)."
+        ],
+        "raw_lines": 62,
+        "fds_total": 62,
+        "result_file": "PurchaseOrderDetail_fds"
+      },
+      "status": "ok",
+      "n_fds": 62,
+      "n_lhs_candidates": 31,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "purchaseorderdetailid"
+        ]
+      ],
+      "predicted_key": [
+        "purchaseorderdetailid"
+      ]
+    },
+    "purchaseorderheader": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.4,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 23 elements; (V)(C)(G); 23 intersections; 24 validations; 0 invalid; 0 new candidates; --> 24 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (107 FDs)",
+          "Time: 128 ms",
+          "Elapsed time: 0:00:00.128 (128 ms)."
+        ],
+        "raw_lines": 107,
+        "fds_total": 107,
+        "result_file": "PurchaseOrderHeader_fds"
+      },
+      "status": "ok",
+      "n_fds": 107,
+      "n_lhs_candidates": 51,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "purchaseorderid"
+        ]
+      ],
+      "predicted_key": [
+        "purchaseorderid"
+      ]
+    },
+    "salesorderdetail": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 1.08,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (56 FDs)",
+          "Time: 839 ms",
+          "Elapsed time: 0:00:00.839 (839 ms)."
+        ],
+        "raw_lines": 56,
+        "fds_total": 56,
+        "result_file": "SalesOrderDetail_fds"
+      },
+      "status": "ok",
+      "n_fds": 56,
+      "n_lhs_candidates": 20,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "salesorderdetailid"
+        ],
+        [
+          "productid",
+          "salesorderid"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "salesorderheader": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 1.28,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 4: 41 elements; (V)(C)(G); 41 intersections; 60 validations; 0 invalid; 0 new candidates; --> 60 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1151 FDs)",
+          "Time: 813 ms",
+          "Elapsed time: 0:00:00.814 (814 ms)."
+        ],
+        "raw_lines": 1151,
+        "fds_total": 1151,
+        "result_file": "SalesOrderHeader_fds"
+      },
+      "status": "ok",
+      "n_fds": 1151,
+      "n_lhs_candidates": 343,
+      "n_superkeys": 67,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "salesorderid"
+        ],
+        [
+          "salesordernumber"
+        ],
+        [
+          "accountnumber",
+          "duedate",
+          "freight"
+        ],
+        [
+          "accountnumber",
+          "duedate",
+          "subtotal"
+        ],
+        [
+          "accountnumber",
+          "duedate",
+          "taxamt"
+        ],
+        [
+          "accountnumber",
+          "duedate",
+          "totaldue"
+        ],
+        [
+          "accountnumber",
+          "freight",
+          "modifieddate"
+        ],
+        [
+          "accountnumber",
+          "freight",
+          "orderdate"
+        ],
+        [
+          "accountnumber",
+          "freight",
+          "shipdate"
+        ],
+        [
+          "accountnumber",
+          "modifieddate",
+          "subtotal"
+        ],
+        [
+          "accountnumber",
+          "modifieddate",
+          "taxamt"
+        ],
+        [
+          "accountnumber",
+          "modifieddate",
+          "totaldue"
+        ],
+        [
+          "accountnumber",
+          "orderdate",
+          "subtotal"
+        ],
+        [
+          "accountnumber",
+          "orderdate",
+          "taxamt"
+        ],
+        [
+          "accountnumber",
+          "orderdate",
+          "totaldue"
+        ],
+        [
+          "accountnumber",
+          "shipdate",
+          "subtotal"
+        ],
+        [
+          "accountnumber",
+          "shipdate",
+          "taxamt"
+        ],
+        [
+          "accountnumber",
+          "shipdate",
+          "totaldue"
+        ],
+        [
+          "billtoaddressid",
+          "duedate",
+          "freight"
+        ],
+        [
+          "billtoaddressid",
+          "duedate",
+          "subtotal"
+        ],
+        [
+          "billtoaddressid",
+          "duedate",
+          "taxamt"
+        ],
+        [
+          "billtoaddressid",
+          "duedate",
+          "totaldue"
+        ],
+        [
+          "billtoaddressid",
+          "freight",
+          "modifieddate"
+        ],
+        [
+          "billtoaddressid",
+          "freight",
+          "orderdate"
+        ],
+        [
+          "billtoaddressid",
+          "freight",
+          "shipdate"
+        ],
+        [
+          "billtoaddressid",
+          "modifieddate",
+          "subtotal"
+        ],
+        [
+          "billtoaddressid",
+          "modifieddate",
+          "taxamt"
+        ],
+        [
+          "billtoaddressid",
+          "modifieddate",
+          "totaldue"
+        ],
+        [
+          "billtoaddressid",
+          "orderdate",
+          "subtotal"
+        ],
+        [
+          "billtoaddressid",
+          "orderdate",
+          "taxamt"
+        ],
+        [
+          "billtoaddressid",
+          "orderdate",
+          "totaldue"
+        ],
+        [
+          "billtoaddressid",
+          "shipdate",
+          "subtotal"
+        ],
+        [
+          "billtoaddressid",
+          "shipdate",
+          "taxamt"
+        ],
+        [
+          "billtoaddressid",
+          "shipdate",
+          "totaldue"
+        ],
+        [
+          "customerid",
+          "duedate",
+          "freight"
+        ],
+        [
+          "customerid",
+          "duedate",
+          "subtotal"
+        ],
+        [
+          "customerid",
+          "duedate",
+          "taxamt"
+        ],
+        [
+          "customerid",
+          "duedate",
+          "totaldue"
+        ],
+        [
+          "customerid",
+          "freight",
+          "modifieddate"
+        ],
+        [
+          "customerid",
+          "freight",
+          "orderdate"
+        ],
+        [
+          "customerid",
+          "freight",
+          "shipdate"
+        ],
+        [
+          "customerid",
+          "modifieddate",
+          "subtotal"
+        ],
+        [
+          "customerid",
+          "modifieddate",
+          "taxamt"
+        ],
+        [
+          "customerid",
+          "modifieddate",
+          "totaldue"
+        ],
+        [
+          "customerid",
+          "orderdate",
+          "subtotal"
+        ],
+        [
+          "customerid",
+          "orderdate",
+          "taxamt"
+        ],
+        [
+          "customerid",
+          "orderdate",
+          "totaldue"
+        ],
+        [
+          "customerid",
+          "shipdate",
+          "subtotal"
+        ],
+        [
+          "customerid",
+          "shipdate",
+          "taxamt"
+        ],
+        [
+          "customerid",
+          "shipdate",
+          "totaldue"
+        ],
+        [
+          "duedate",
+          "freight",
+          "shiptoaddressid"
+        ],
+        [
+          "duedate",
+          "shiptoaddressid",
+          "subtotal"
+        ],
+        [
+          "duedate",
+          "shiptoaddressid",
+          "taxamt"
+        ],
+        [
+          "duedate",
+          "shiptoaddressid",
+          "totaldue"
+        ],
+        [
+          "freight",
+          "modifieddate",
+          "shiptoaddressid"
+        ],
+        [
+          "freight",
+          "orderdate",
+          "shiptoaddressid"
+        ],
+        [
+          "freight",
+          "shipdate",
+          "shiptoaddressid"
+        ],
+        [
+          "modifieddate",
+          "shiptoaddressid",
+          "subtotal"
+        ],
+        [
+          "modifieddate",
+          "shiptoaddressid",
+          "taxamt"
+        ],
+        [
+          "modifieddate",
+          "shiptoaddressid",
+          "totaldue"
+        ],
+        [
+          "orderdate",
+          "shiptoaddressid",
+          "subtotal"
+        ],
+        [
+          "orderdate",
+          "shiptoaddressid",
+          "taxamt"
+        ],
+        [
+          "orderdate",
+          "shiptoaddressid",
+          "totaldue"
+        ],
+        [
+          "shipdate",
+          "shiptoaddressid",
+          "subtotal"
+        ],
+        [
+          "shipdate",
+          "shiptoaddressid",
+          "taxamt"
+        ],
+        [
+          "shipdate",
+          "shiptoaddressid",
+          "totaldue"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "salesorderheadersalesreason": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.32,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1 FDs)",
+          "Time: 110 ms",
+          "Elapsed time: 0:00:00.110 (110 ms)."
+        ],
+        "raw_lines": 1,
+        "fds_total": 1,
+        "result_file": "SalesOrderHeaderSalesReason_fds"
+      },
+      "status": "no_superkey",
+      "n_fds": 1,
+      "n_lhs_candidates": 1,
+      "predicted_key": null
+    },
+    "salesperson": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.27,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 3 elements; (V)(C)(G); 3 intersections; 9 validations; 0 invalid; 0 new candidates; --> 9 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (60 FDs)",
+          "Time: 18 ms",
+          "Elapsed time: 0:00:00.018 (18 ms)."
+        ],
+        "raw_lines": 60,
+        "fds_total": 60,
+        "result_file": "SalesPerson_fds"
+      },
+      "status": "ok",
+      "n_fds": 60,
+      "n_lhs_candidates": 16,
+      "n_superkeys": 7,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "salesytd"
+        ],
+        [
+          "modifieddate",
+          "saleslastyear"
+        ],
+        [
+          "bonus",
+          "commissionpct",
+          "modifieddate"
+        ],
+        [
+          "bonus",
+          "modifieddate",
+          "territoryid"
+        ],
+        [
+          "commissionpct",
+          "modifieddate",
+          "territoryid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "salespersonquotahistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 2 elements; (V)(C)(G); 2 intersections; 4 validations; 0 invalid; 0 new candidates; --> 4 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (10 FDs)",
+          "Time: 20 ms",
+          "Elapsed time: 0:00:00.020 (20 ms)."
+        ],
+        "raw_lines": 10,
+        "fds_total": 10,
+        "result_file": "SalesPersonQuotaHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 10,
+      "n_lhs_candidates": 5,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "businessentityid",
+          "modifieddate"
+        ],
+        [
+          "businessentityid",
+          "quotadate"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "salesreason": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 4 intersections; 4 validations; 0 invalid; 0 new candidates; --> 4 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (5 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 5,
+        "fds_total": 5,
+        "result_file": "SalesReason_fds"
+      },
+      "status": "ok",
+      "n_fds": 5,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "salesreasonid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "salestaxrate": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 3 elements; (V)(C)(G); 3 intersections; 11 validations; 0 invalid; 0 new candidates; --> 11 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (23 FDs)",
+          "Time: 17 ms",
+          "Elapsed time: 0:00:00.017 (17 ms)."
+        ],
+        "raw_lines": 23,
+        "fds_total": 23,
+        "result_file": "SalesTaxRate_fds"
+      },
+      "status": "ok",
+      "n_fds": 23,
+      "n_lhs_candidates": 6,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "salestaxrateid"
+        ],
+        [
+          "name",
+          "stateprovinceid"
+        ],
+        [
+          "stateprovinceid",
+          "taxrate"
+        ],
+        [
+          "stateprovinceid",
+          "taxtype"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "salesterritory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 6 elements; (V)(C)(G); 31 intersections; 31 validations; 0 invalid; 0 new candidates; --> 31 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (34 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.016 (16 ms)."
+        ],
+        "raw_lines": 34,
+        "fds_total": 34,
+        "result_file": "SalesTerritory_fds"
+      },
+      "status": "ok",
+      "n_fds": 34,
+      "n_lhs_candidates": 6,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "saleslastyear"
+        ],
+        [
+          "salesytd"
+        ],
+        [
+          "territoryid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "salesterritoryhistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 5 elements; (V)(C)(G); 5 intersections; 15 validations; 0 invalid; 0 new candidates; --> 15 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (22 FDs)",
+          "Time: 18 ms",
+          "Elapsed time: 0:00:00.018 (18 ms)."
+        ],
+        "raw_lines": 22,
+        "fds_total": 22,
+        "result_file": "SalesTerritoryHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 22,
+      "n_lhs_candidates": 7,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "businessentityid",
+          "enddate"
+        ],
+        [
+          "businessentityid",
+          "modifieddate"
+        ],
+        [
+          "businessentityid",
+          "startdate"
+        ],
+        [
+          "businessentityid",
+          "territoryid"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "scrapreason": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.28,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 23 ms",
+          "Elapsed time: 0:00:00.023 (23 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "ScrapReason_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "scrapreasonid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "shift": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 4 elements; (V)(C)(G); 12 intersections; 12 validations; 0 invalid; 0 new candidates; --> 12 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (13 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 13,
+        "fds_total": 13,
+        "result_file": "Shift_fds"
+      },
+      "status": "ok",
+      "n_fds": 13,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "endtime"
+        ],
+        [
+          "name"
+        ],
+        [
+          "shiftid"
+        ],
+        [
+          "starttime"
+        ]
+      ],
+      "predicted_key": [
+        "endtime"
+      ]
+    },
+    "shipmethod": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 5 elements; (V)(C)(G); 20 intersections; 20 validations; 0 invalid; 0 new candidates; --> 20 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (21 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 21,
+        "fds_total": 21,
+        "result_file": "ShipMethod_fds"
+      },
+      "status": "ok",
+      "n_fds": 21,
+      "n_lhs_candidates": 5,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "shipbase"
+        ],
+        [
+          "shipmethodid"
+        ],
+        [
+          "shiprate"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "shoppingcartitem": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 9 intersections; 9 validations; 0 invalid; 0 new candidates; --> 9 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (11 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 11,
+        "fds_total": 11,
+        "result_file": "ShoppingCartItem_fds"
+      },
+      "status": "ok",
+      "n_fds": 11,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "productid"
+        ],
+        [
+          "quantity"
+        ],
+        [
+          "shoppingcartitemid"
+        ]
+      ],
+      "predicted_key": [
+        "productid"
+      ]
+    },
+    "specialoffer": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.3,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (69 FDs)",
+          "Time: 19 ms",
+          "Elapsed time: 0:00:00.019 (19 ms)."
+        ],
+        "raw_lines": 69,
+        "fds_total": 69,
+        "result_file": "SpecialOffer_fds"
+      },
+      "status": "ok",
+      "n_fds": 69,
+      "n_lhs_candidates": 21,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "description"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "specialofferid"
+        ],
+        [
+          "discountpct",
+          "enddate"
+        ],
+        [
+          "discountpct",
+          "type"
+        ]
+      ],
+      "predicted_key": [
+        "description"
+      ]
+    },
+    "specialofferproduct": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (5 FDs)",
+          "Time: 25 ms",
+          "Elapsed time: 0:00:00.025 (25 ms)."
+        ],
+        "raw_lines": 5,
+        "fds_total": 5,
+        "result_file": "SpecialOfferProduct_fds"
+      },
+      "status": "ok",
+      "n_fds": 5,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "rowguid"
+        ],
+        [
+          "productid",
+          "specialofferid"
+        ]
+      ],
+      "predicted_key": [
+        "rowguid"
+      ]
+    },
+    "stateprovince": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 4 elements; (V)(C)(G); 28 intersections; 28 validations; 0 invalid; 0 new candidates; --> 28 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (28 FDs)",
+          "Time: 20 ms",
+          "Elapsed time: 0:00:00.020 (20 ms)."
+        ],
+        "raw_lines": 28,
+        "fds_total": 28,
+        "result_file": "StateProvince_fds"
+      },
+      "status": "ok",
+      "n_fds": 28,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "stateprovincecode"
+        ],
+        [
+          "stateprovinceid"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "store": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (16 FDs)",
+          "Time: 37 ms",
+          "Elapsed time: 0:00:00.037 (37 ms)."
+        ],
+        "raw_lines": 16,
+        "fds_total": 16,
+        "result_file": "Store_fds"
+      },
+      "status": "ok",
+      "n_fds": 16,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "businessentityid"
+        ],
+        [
+          "demographics"
+        ],
+        [
+          "rowguid"
+        ],
+        [
+          "name",
+          "salespersonid"
+        ]
+      ],
+      "predicted_key": [
+        "businessentityid"
+      ]
+    },
+    "transactionhistory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.81,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (40 FDs)",
+          "Time: 577 ms",
+          "Elapsed time: 0:00:00.577 (577 ms)."
+        ],
+        "raw_lines": 40,
+        "fds_total": 40,
+        "result_file": "TransactionHistory_fds"
+      },
+      "status": "ok",
+      "n_fds": 40,
+      "n_lhs_candidates": 14,
+      "n_superkeys": 6,
+      "candidate_keys": [
+        [
+          "transactionid"
+        ],
+        [
+          "referenceorderid",
+          "referenceorderlineid"
+        ],
+        [
+          "actualcost",
+          "productid",
+          "referenceorderid"
+        ],
+        [
+          "modifieddate",
+          "productid",
+          "referenceorderid"
+        ],
+        [
+          "productid",
+          "referenceorderid",
+          "transactiondate"
+        ],
+        [
+          "productid",
+          "referenceorderid",
+          "transactiontype"
+        ]
+      ],
+      "predicted_key": [
+        "transactionid"
+      ]
+    },
+    "transactionhistoryarchive": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.71,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 3 elements; (V)(C)(G); 3 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (34 FDs)",
+          "Time: 474 ms",
+          "Elapsed time: 0:00:00.474 (474 ms)."
+        ],
+        "raw_lines": 34,
+        "fds_total": 34,
+        "result_file": "TransactionHistoryArchive_fds"
+      },
+      "status": "ok",
+      "n_fds": 34,
+      "n_lhs_candidates": 13,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "transactionid"
+        ],
+        [
+          "productid",
+          "referenceorderid"
+        ],
+        [
+          "referenceorderid",
+          "referenceorderlineid"
+        ]
+      ],
+      "predicted_key": [
+        "transactionid"
+      ]
+    },
+    "unitmeasure": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "UnitMeasure_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "name"
+        ],
+        [
+          "unitmeasurecode"
+        ]
+      ],
+      "predicted_key": [
+        "name"
+      ]
+    },
+    "vendor": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (22 FDs)",
+          "Time: 20 ms",
+          "Elapsed time: 0:00:00.020 (20 ms)."
+        ],
+        "raw_lines": 22,
+        "fds_total": 22,
+        "result_file": "Vendor_fds"
+      },
+      "status": "ok",
+      "n_fds": 22,
+      "n_lhs_candidates": 4,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "accountnumber"
+        ],
+        [
+          "businessentityid"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "accountnumber"
+      ]
+    },
+    "workorder": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.85,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (60 FDs)",
+          "Time: 599 ms",
+          "Elapsed time: 0:00:00.599 (599 ms)."
+        ],
+        "raw_lines": 60,
+        "fds_total": 60,
+        "result_file": "WorkOrder_fds"
+      },
+      "status": "ok",
+      "n_fds": 60,
+      "n_lhs_candidates": 28,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "workorderid"
+        ]
+      ],
+      "predicted_key": [
+        "workorderid"
+      ]
+    },
+    "workorderrouting": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.68,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (44 FDs)",
+          "Time: 440 ms",
+          "Elapsed time: 0:00:00.440 (440 ms)."
+        ],
+        "raw_lines": 44,
+        "fds_total": 44,
+        "result_file": "WorkOrderRouting_fds"
+      },
+      "status": "ok",
+      "n_fds": 44,
+      "n_lhs_candidates": 13,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "actualresourcehrs",
+          "workorderid"
+        ]
+      ],
+      "predicted_key": [
+        "actualresourcehrs",
+        "workorderid"
+      ]
+    }
+  }
+}
