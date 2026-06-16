@@ -1,0 +1,33 @@
+{
+  "dataset": "dvdrental",
+  "status": "ok",
+  "meta": {
+    "n_csv": 15,
+    "separator": ",",
+    "elapsed_sec": 0.93,
+    "exit": 0,
+    "stderr_tail": [],
+    "stdout_tail": [
+      "naryLoadTime: null",
+      "naryCompareTime: null",
+      "outputTime: 1",
+      "",
+      "Elapsed time: 0:00:00.541 (541 ms)."
+    ],
+    "raw_lines": 578,
+    "binder_inds_total": 578,
+    "unary_inds_kept": 578,
+    "self_inds_dropped": 0,
+    "result_file": "dvdrental_inds"
+  },
+  "binder_unary_inds": 578,
+  "fk_unary": {
+    "tp": 18,
+    "fp": 560,
+    "fn": 0,
+    "precision": 0.031141868512110725,
+    "recall": 1.0,
+    "f1": 0.060402684563758385
+  },
+  "gt_unary_count": 18
+}

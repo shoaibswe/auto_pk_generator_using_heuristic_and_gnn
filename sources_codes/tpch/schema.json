@@ -1,0 +1,311 @@
+{
+  "tables": {
+    "asm_region": [
+      {
+        "type": "PK",
+        "columns": [
+          "r_regionkey"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_nation": [
+      {
+        "type": "PK",
+        "columns": [
+          "n_nationkey"
+        ],
+        "explainability": {
+          "confidence": "0.96",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "n_regionkey"
+        ],
+        "references": {
+          "table": "asm_region",
+          "column": "r_regionkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.260852
+        }
+      }
+    ],
+    "asm_supplier": [
+      {
+        "type": "PK",
+        "columns": [
+          "s_suppkey"
+        ],
+        "explainability": {
+          "confidence": "0.86",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "s_nationkey"
+        ],
+        "references": {
+          "table": "asm_nation",
+          "column": "n_nationkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.240095
+        }
+      }
+    ],
+    "asm_partsupp": [
+      {
+        "type": "PK",
+        "columns": [
+          "ps_supplycost"
+        ],
+        "explainability": {
+          "confidence": "0.28",
+          "uniqueness": "99.8%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.2%",
+          "id_score": "0.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ps_suppkey"
+        ],
+        "references": {
+          "table": "asm_supplier",
+          "column": "s_suppkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.096982
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ps_partkey"
+        ],
+        "references": {
+          "table": "asm_part",
+          "column": "p_partkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.096982
+        }
+      }
+    ],
+    "asm_orders": [
+      {
+        "type": "PK",
+        "columns": [
+          "o_orderkey"
+        ],
+        "explainability": {
+          "confidence": "0.70",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "o_custkey"
+        ],
+        "references": {
+          "table": "asm_customer",
+          "column": "c_custkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.118696
+        }
+      }
+    ],
+    "asm_customer": [
+      {
+        "type": "PK",
+        "columns": [
+          "c_custkey"
+        ],
+        "explainability": {
+          "confidence": "0.63",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "c_nationkey"
+        ],
+        "references": {
+          "table": "asm_nation",
+          "column": "n_nationkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.240095
+        }
+      }
+    ],
+    "asm_part": [
+      {
+        "type": "PK",
+        "columns": [
+          "p_partkey"
+        ],
+        "explainability": {
+          "confidence": "0.64",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_lineitem": [
+      {
+        "type": "PK",
+        "columns": [
+          "l_extendedprice"
+        ],
+        "explainability": {
+          "confidence": "0.45",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "0.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "l_orderkey"
+        ],
+        "references": {
+          "table": "asm_orders",
+          "column": "o_orderkey"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.072855
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "l_suppkey"
+        ],
+        "references": {
+          "table": "asm_supplier",
+          "column": "s_suppkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.096982
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "l_partkey"
+        ],
+        "references": {
+          "table": "asm_part",
+          "column": "p_partkey"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.096982
+        }
+      }
+    ]
+  }
+}

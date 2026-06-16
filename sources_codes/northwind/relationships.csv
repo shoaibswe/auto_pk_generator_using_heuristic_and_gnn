@@ -1,0 +1,9 @@
+Source Table,Source Col,Target Table,Target Col,Confidence,Inclusion_A_to_B,Inclusion_B_to_A,Jaccard,Reason
+territories,['region_id'],region,region_id,0.85,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00"
+order_details,['product_id'],products,product_id,0.83,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90"
+employee_territories,['employee_id'],employees,employee_id,0.83,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90"
+orders,['employee_id'],employees,employee_id,0.83,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90"
+products,['supplier_id'],suppliers,supplier_id,0.83,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90"
+orders,['customer_id'],customers,customer_id,0.83,1.00,0.98,0.98,"inc(A->B)=1.00, inc(B->A)=0.98, jacc=0.98, name=0.90"
+order_details,['order_id'],orders,order_id,0.83,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90"
+products,['category_id'],categories,category_id,0.65,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.00"

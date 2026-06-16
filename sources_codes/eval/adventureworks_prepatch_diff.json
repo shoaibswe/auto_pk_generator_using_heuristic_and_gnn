@@ -1,0 +1,18 @@
+{
+  "scope": "Atomic-only PK reselection on AdventureWorks, comparing the pre-patch sort key (len(cols), -id_score, -self_ref) without table-name lower-casing against the post-patch sort key (len(cols), is_uuid, -id_score, -self_ref) with table-name lower-casing.  Composite candidates are not reconstructed because per-composite features are not committed to disk.",
+  "atomic_gt_pks_compared": 45,
+  "pre_patch_correct_atomic": 44,
+  "post_patch_correct_atomic": 44,
+  "pre_patch_rowguid_picks": 1,
+  "flips_uuid_to_id_after_patch": 1,
+  "tables_with_different_pick": [
+    {
+      "table": "Document",
+      "ground_truth_pk": "documentnode",
+      "pre_patch_pick": "rowguid",
+      "post_patch_pick": "Doc",
+      "pre_match": false,
+      "post_match": false
+    }
+  ]
+}

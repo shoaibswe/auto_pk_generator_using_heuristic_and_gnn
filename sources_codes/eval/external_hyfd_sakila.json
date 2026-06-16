@@ -1,0 +1,567 @@
+{
+  "dataset": "sakila",
+  "status": "ok",
+  "pk": {
+    "accuracy": 0.4666666666666667,
+    "correct": 7,
+    "scored": 15
+  },
+  "predicted_tables": 14,
+  "tables_with_ground_truth": 15,
+  "per_table": {
+    "actor": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 17 ms",
+          "Elapsed time: 0:00:00.017 (17 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "actor_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "actor_id"
+        ]
+      ],
+      "predicted_key": [
+        "actor_id"
+      ]
+    },
+    "address": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (10 FDs)",
+          "Time: 23 ms",
+          "Elapsed time: 0:00:00.023 (23 ms)."
+        ],
+        "raw_lines": 10,
+        "fds_total": 10,
+        "result_file": "address_fds"
+      },
+      "status": "ok",
+      "n_fds": 10,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "address"
+        ],
+        [
+          "address_id"
+        ]
+      ],
+      "predicted_key": [
+        "address"
+      ]
+    },
+    "category": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 13 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "category_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "category_id"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "category_id"
+      ]
+    },
+    "city": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (4 FDs)",
+          "Time: 23 ms",
+          "Elapsed time: 0:00:00.024 (24 ms)."
+        ],
+        "raw_lines": 4,
+        "fds_total": 4,
+        "result_file": "city_fds"
+      },
+      "status": "ok",
+      "n_fds": 4,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "city_id"
+        ],
+        [
+          "city",
+          "country_id"
+        ]
+      ],
+      "predicted_key": [
+        "city_id"
+      ]
+    },
+    "country": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "country_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "country"
+        ],
+        [
+          "country_id"
+        ]
+      ],
+      "predicted_key": [
+        "country"
+      ]
+    },
+    "customer": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.26,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 1 elements; (V)(C)(G); 1 intersections; 5 validations; 0 invalid; 0 new candidates; --> 5 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (36 FDs)",
+          "Time: 28 ms",
+          "Elapsed time: 0:00:00.028 (28 ms)."
+        ],
+        "raw_lines": 36,
+        "fds_total": 36,
+        "result_file": "customer_fds"
+      },
+      "status": "ok",
+      "n_fds": 36,
+      "n_lhs_candidates": 6,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "address_id"
+        ],
+        [
+          "customer_id"
+        ],
+        [
+          "email"
+        ],
+        [
+          "last_name"
+        ],
+        [
+          "create_date",
+          "first_name"
+        ]
+      ],
+      "predicted_key": [
+        "address_id"
+      ]
+    },
+    "film": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.28,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 5: 3 elements; (V)(C)(G); 3 intersections; 11 validations; 0 invalid; 0 new candidates; --> 11 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (41 FDs)",
+          "Time: 44 ms",
+          "Elapsed time: 0:00:00.044 (44 ms)."
+        ],
+        "raw_lines": 41,
+        "fds_total": 41,
+        "result_file": "film_fds"
+      },
+      "status": "ok",
+      "n_fds": 41,
+      "n_lhs_candidates": 7,
+      "n_superkeys": 6,
+      "candidate_keys": [
+        [
+          "description"
+        ],
+        [
+          "film_id"
+        ],
+        [
+          "title"
+        ],
+        [
+          "length",
+          "rating",
+          "rental_duration",
+          "rental_rate",
+          "replacement_cost"
+        ],
+        [
+          "length",
+          "rating",
+          "rental_rate",
+          "replacement_cost",
+          "special_features"
+        ],
+        [
+          "length",
+          "rental_duration",
+          "rental_rate",
+          "replacement_cost",
+          "special_features"
+        ]
+      ],
+      "predicted_key": [
+        "description"
+      ]
+    },
+    "film_actor": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.24,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 0: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1 FDs)",
+          "Time: 41 ms",
+          "Elapsed time: 0:00:00.041 (41 ms)."
+        ],
+        "raw_lines": 1,
+        "fds_total": 1,
+        "result_file": "film_actor_fds"
+      },
+      "status": "no_superkey",
+      "n_fds": 1,
+      "n_lhs_candidates": 0,
+      "predicted_key": null
+    },
+    "film_category": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.23,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (2 FDs)",
+          "Time: 24 ms",
+          "Elapsed time: 0:00:00.024 (24 ms)."
+        ],
+        "raw_lines": 2,
+        "fds_total": 2,
+        "result_file": "film_category_fds"
+      },
+      "status": "ok",
+      "n_fds": 2,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "film_id"
+        ]
+      ],
+      "predicted_key": [
+        "film_id"
+      ]
+    },
+    "inventory": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 38 ms",
+          "Elapsed time: 0:00:00.038 (38 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "inventory_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "inventory_id"
+        ]
+      ],
+      "predicted_key": [
+        "inventory_id"
+      ]
+    },
+    "language": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "language_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "language_id"
+        ],
+        [
+          "name"
+        ]
+      ],
+      "predicted_key": [
+        "language_id"
+      ]
+    },
+    "payment": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.34,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 4: 1 elements; (V)(C)(G); 1 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (17 FDs)",
+          "Time: 115 ms",
+          "Elapsed time: 0:00:00.115 (115 ms)."
+        ],
+        "raw_lines": 17,
+        "fds_total": 17,
+        "result_file": "payment_fds"
+      },
+      "status": "ok",
+      "n_fds": 17,
+      "n_lhs_candidates": 6,
+      "n_superkeys": 5,
+      "candidate_keys": [
+        [
+          "payment_id"
+        ],
+        [
+          "payment_date",
+          "rental_id"
+        ],
+        [
+          "amount",
+          "customer_id",
+          "rental_id"
+        ],
+        [
+          "amount",
+          "rental_id",
+          "staff_id"
+        ],
+        [
+          "amount",
+          "customer_id",
+          "payment_date",
+          "staff_id"
+        ]
+      ],
+      "predicted_key": [
+        "payment_id"
+      ]
+    },
+    "rental": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.36,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "Validating FDs using plis ...",
+          "Translating FD-tree into result format ...",
+          "... done! (24 FDs)",
+          "Time: 129 ms",
+          "Elapsed time: 0:00:00.129 (129 ms)."
+        ],
+        "raw_lines": 24,
+        "fds_total": 24,
+        "result_file": "rental_fds"
+      },
+      "status": "ok",
+      "n_fds": 24,
+      "n_lhs_candidates": 7,
+      "n_superkeys": 4,
+      "candidate_keys": [
+        [
+          "rental_id"
+        ],
+        [
+          "customer_id",
+          "inventory_id"
+        ],
+        [
+          "inventory_id",
+          "rental_date"
+        ],
+        [
+          "inventory_id",
+          "return_date"
+        ]
+      ],
+      "predicted_key": [
+        "rental_id"
+      ]
+    },
+    "staff": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.26,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 7 elements; (V)(C)(G); 42 intersections; 42 validations; 0 invalid; 0 new candidates; --> 42 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (46 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 46,
+        "fds_total": 46,
+        "result_file": "staff_fds"
+      },
+      "status": "ok",
+      "n_fds": 46,
+      "n_lhs_candidates": 7,
+      "n_superkeys": 7,
+      "candidate_keys": [
+        [
+          "address_id"
+        ],
+        [
+          "email"
+        ],
+        [
+          "first_name"
+        ],
+        [
+          "last_name"
+        ],
+        [
+          "staff_id"
+        ],
+        [
+          "store_id"
+        ],
+        [
+          "username"
+        ]
+      ],
+      "predicted_key": [
+        "address_id"
+      ]
+    },
+    "store": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.21,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (7 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 7,
+        "fds_total": 7,
+        "result_file": "store_fds"
+      },
+      "status": "ok",
+      "n_fds": 7,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "address_id"
+        ],
+        [
+          "manager_staff_id"
+        ],
+        [
+          "store_id"
+        ]
+      ],
+      "predicted_key": [
+        "address_id"
+      ]
+    }
+  }
+}

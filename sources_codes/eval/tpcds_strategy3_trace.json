@@ -1,0 +1,39 @@
+{
+  "_comment": "Auto-extracted trace counts from paper_final/tpcds/Sieve_GNN_executed.ipynb (Phase 5a output cell) and paper_final/tpcds/relationships.csv. Committed so that the qualitative TPC-DS section can quote only numbers backed by an artefact, per the manuscript's data-availability commitment.",
+  "dataset": "tpcds",
+  "source_artefacts": [
+    "paper_final/tpcds/Sieve_GNN_executed.ipynb",
+    "paper_final/tpcds/relationships.csv",
+    "paper_final/tpcds/schema_final.json",
+    "paper_final/eval/consolidated_results.json"
+  ],
+  "phase5a_strategy3_weak_labels": {
+    "positive": 2,
+    "negative": 8,
+    "total_labelled": 10,
+    "train_split": 8,
+    "val_split": 2,
+    "best_val_f1": 0.0,
+    "epochs_run": 120
+  },
+  "phase5_cascade_aggregate": {
+    "candidates_proposed_by_cascade": 42,
+    "candidates_passing_data_inclusion_gate": 16,
+    "rows_written_to_relationships_csv": 16
+  },
+  "recovered_fk_breakdown_by_attribution": {
+    "name_score_distribution_in_relationships_csv": {"0.70": 16},
+    "interpretation": "Every accepted FK row has Reason field name=0.70, meaning the candidate was proposed by Strategy 1 (NameSim) after the prefix-stripping normalisation; none was proposed solely by Strategy 3."
+  },
+  "headline_metrics_against_official_ri_ddl": {
+    "ground_truth_ri_ddl": "paper_final/tpcds/sql_ddl.sql",
+    "gt_unary_fk_constraints": 102,
+    "tp": 16,
+    "fp": 0,
+    "fn": 86,
+    "precision": 1.0,
+    "recall": 0.156862745,
+    "f1": 0.271186441
+  },
+  "honest_attribution": "The recovery from FK F1 0.000 (previous revision) to FK F1 0.271 at perfect precision is attributable to P3 (Kimball IDScore extension: _sk/_nk/_bk/_dk -> IDScore=2) operating through Strategy 1's prefix-stripping NameSim. P2 (the non-circular Strategy-3 weak-label rule) is in the code path and resolves a documented circularity, but on this run the GATv2 edge classifier trains on only 10 weak labels, reaches val F1=0.000, and does not contribute to the 16 accepted FKs."
+}

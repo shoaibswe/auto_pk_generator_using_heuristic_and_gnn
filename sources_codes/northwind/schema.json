@@ -1,0 +1,361 @@
+{
+  "tables": {
+    "categories": [
+      {
+        "type": "PK",
+        "columns": [
+          "category_id"
+        ],
+        "explainability": {
+          "confidence": "0.00",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "employee_territories": [
+      {
+        "type": "PK",
+        "columns": [
+          "territory_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "employee_id"
+        ],
+        "references": {
+          "table": "employees",
+          "column": "employee_id"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.164009
+        }
+      }
+    ],
+    "region": [
+      {
+        "type": "PK",
+        "columns": [
+          "region_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "territories": [
+      {
+        "type": "PK",
+        "columns": [
+          "territory_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "region_id"
+        ],
+        "references": {
+          "table": "region",
+          "column": "region_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.12356
+        }
+      }
+    ],
+    "shippers": [
+      {
+        "type": "PK",
+        "columns": [
+          "shipper_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "us_states": [
+      {
+        "type": "PK",
+        "columns": [
+          "state_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "order_details": [
+      {
+        "type": "PK",
+        "columns": [
+          "order_id",
+          "unit_price"
+        ],
+        "explainability": {
+          "confidence": "0.94",
+          "uniqueness": "99.4%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.6%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "product_id"
+        ],
+        "references": {
+          "table": "products",
+          "column": "product_id"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.095174
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "order_id"
+        ],
+        "references": {
+          "table": "orders",
+          "column": "order_id"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.095174
+        }
+      }
+    ],
+    "products": [
+      {
+        "type": "PK",
+        "columns": [
+          "product_id"
+        ],
+        "explainability": {
+          "confidence": "0.96",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "supplier_id"
+        ],
+        "references": {
+          "table": "suppliers",
+          "column": "supplier_id"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.107238
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "category_id"
+        ],
+        "references": {
+          "table": "categories",
+          "column": "category_id"
+        },
+        "explainability": {
+          "confidence": "0.65",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.107238
+        }
+      }
+    ],
+    "employees": [
+      {
+        "type": "PK",
+        "columns": [
+          "employee_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "suppliers": [
+      {
+        "type": "PK",
+        "columns": [
+          "supplier_id"
+        ],
+        "explainability": {
+          "confidence": "0.98",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "customers": [
+      {
+        "type": "PK",
+        "columns": [
+          "customer_id"
+        ],
+        "explainability": {
+          "confidence": "0.96",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "orders": [
+      {
+        "type": "PK",
+        "columns": [
+          "order_id"
+        ],
+        "explainability": {
+          "confidence": "0.95",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "employee_id"
+        ],
+        "references": {
+          "table": "employees",
+          "column": "employee_id"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.90",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.164009
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "customer_id"
+        ],
+        "references": {
+          "table": "customers",
+          "column": "customer_id"
+        },
+        "explainability": {
+          "confidence": "0.83",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.98",
+          "jaccard": "0.98",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.98, jacc=0.98, name=0.90",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.107238
+        }
+      }
+    ]
+  }
+}

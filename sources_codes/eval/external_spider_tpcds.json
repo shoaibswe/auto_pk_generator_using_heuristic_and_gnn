@@ -1,0 +1,33 @@
+{
+  "dataset": "tpcds",
+  "status": "ok",
+  "meta": {
+    "n_csv": 25,
+    "separator": ",",
+    "elapsed_sec": 138.53,
+    "exit": 0,
+    "stderr_tail": [],
+    "stdout_tail": [
+      "loadTime: 132679",
+      "compareTime: 4710",
+      "outputTime: 7",
+      "",
+      "Elapsed time: 0:02:17.471 (137471 ms)."
+    ],
+    "raw_lines": 5902,
+    "inds_total": 5902,
+    "unary_inds_kept": 5902,
+    "self_inds_dropped": 0,
+    "result_file": "tpcds_inds"
+  },
+  "spider_unary_inds": 5902,
+  "fk_unary": {
+    "tp": 17,
+    "fp": 5885,
+    "fn": 85,
+    "precision": 0.0028803795323619113,
+    "recall": 0.16666666666666666,
+    "f1": 0.005662891405729513
+  },
+  "gt_unary_count": 102
+}

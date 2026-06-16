@@ -1,0 +1,35 @@
+{
+  "northwind": {
+    "dataset": "northwind",
+    "status": "ok",
+    "fk_unary": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 5,
+      "precision": 1.0,
+      "recall": 0.6153846153846154,
+      "f1": 0.761904761904762
+    },
+    "fk_all": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 5,
+      "precision": 1.0,
+      "recall": 0.6153846153846154,
+      "f1": 0.761904761904762
+    },
+    "pk": {
+      "accuracy": 0.7142857142857143,
+      "correct": 10,
+      "scored": 14
+    },
+    "counts": {
+      "gt_fk_components": 13,
+      "gt_fk_unary": 13,
+      "gt_fk_relations": 13,
+      "pred_fk_components": 8,
+      "pred_fk_relations": 8,
+      "gt_pk_tables": 14
+    }
+  }
+}

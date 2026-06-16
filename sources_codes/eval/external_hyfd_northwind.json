@@ -1,0 +1,687 @@
+{
+  "dataset": "northwind",
+  "status": "ok",
+  "pk": {
+    "accuracy": 0.35714285714285715,
+    "correct": 5,
+    "scored": 14
+  },
+  "predicted_tables": 12,
+  "tables_with_ground_truth": 14,
+  "per_table": {
+    "categories": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (7 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 7,
+        "fds_total": 7,
+        "result_file": "categories_fds"
+      },
+      "status": "ok",
+      "n_fds": 7,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "category_id"
+        ],
+        [
+          "category_name"
+        ],
+        [
+          "description"
+        ]
+      ],
+      "predicted_key": [
+        "category_id"
+      ]
+    },
+    "customers": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.27,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (62 FDs)",
+          "Time: 20 ms",
+          "Elapsed time: 0:00:00.020 (20 ms)."
+        ],
+        "raw_lines": 62,
+        "fds_total": 62,
+        "result_file": "customers_fds"
+      },
+      "status": "ok",
+      "n_fds": 62,
+      "n_lhs_candidates": 9,
+      "n_superkeys": 6,
+      "candidate_keys": [
+        [
+          "address"
+        ],
+        [
+          "company_name"
+        ],
+        [
+          "contact_name"
+        ],
+        [
+          "customer_id"
+        ],
+        [
+          "phone"
+        ],
+        [
+          "fax",
+          "postal_code"
+        ]
+      ],
+      "predicted_key": [
+        "address"
+      ]
+    },
+    "employee_territories": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (1 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 1,
+        "fds_total": 1,
+        "result_file": "employee_territories_fds"
+      },
+      "status": "ok",
+      "n_fds": 1,
+      "n_lhs_candidates": 1,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "territory_id"
+        ]
+      ],
+      "predicted_key": [
+        "territory_id"
+      ]
+    },
+    "employees": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.31,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 2: 13 elements; (V)(C)(G); 13 intersections; 50 validations; 0 invalid; 0 new candidates; --> 50 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (203 FDs)",
+          "Time: 19 ms",
+          "Elapsed time: 0:00:00.020 (20 ms)."
+        ],
+        "raw_lines": 203,
+        "fds_total": 203,
+        "result_file": "employees_fds"
+      },
+      "status": "ok",
+      "n_fds": 203,
+      "n_lhs_candidates": 26,
+      "n_superkeys": 12,
+      "candidate_keys": [
+        [
+          "address"
+        ],
+        [
+          "birth_date"
+        ],
+        [
+          "employee_id"
+        ],
+        [
+          "extension"
+        ],
+        [
+          "first_name"
+        ],
+        [
+          "home_phone"
+        ],
+        [
+          "last_name"
+        ],
+        [
+          "notes"
+        ],
+        [
+          "postal_code"
+        ],
+        [
+          "hire_date",
+          "photo_path"
+        ],
+        [
+          "hire_date",
+          "reports_to"
+        ],
+        [
+          "hire_date",
+          "title"
+        ]
+      ],
+      "predicted_key": [
+        "address"
+      ]
+    },
+    "order_details": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.25,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 4: 1 elements; (V)(C)(G); 1 intersections; 1 validations; 0 invalid; 0 new candidates; --> 1 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (4 FDs)",
+          "Time: 38 ms",
+          "Elapsed time: 0:00:00.038 (38 ms)."
+        ],
+        "raw_lines": 4,
+        "fds_total": 4,
+        "result_file": "order_details_fds"
+      },
+      "status": "ok",
+      "n_fds": 4,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "order_id",
+          "product_id"
+        ],
+        [
+          "discount",
+          "order_id",
+          "quantity",
+          "unit_price"
+        ]
+      ],
+      "predicted_key": [
+        "order_id",
+        "product_id"
+      ]
+    },
+    "orders": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.39,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 5: 2 elements; (V)(C)(G); 2 intersections; 16 validations; 0 invalid; 0 new candidates; --> 16 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (317 FDs)",
+          "Time: 53 ms",
+          "Elapsed time: 0:00:00.053 (53 ms)."
+        ],
+        "raw_lines": 317,
+        "fds_total": 317,
+        "result_file": "orders_fds"
+      },
+      "status": "ok",
+      "n_fds": 317,
+      "n_lhs_candidates": 79,
+      "n_superkeys": 34,
+      "candidate_keys": [
+        [
+          "order_id"
+        ],
+        [
+          "freight",
+          "order_date"
+        ],
+        [
+          "freight",
+          "required_date"
+        ],
+        [
+          "freight",
+          "shipped_date"
+        ],
+        [
+          "customer_id",
+          "employee_id",
+          "order_date"
+        ],
+        [
+          "customer_id",
+          "employee_id",
+          "required_date"
+        ],
+        [
+          "customer_id",
+          "order_date",
+          "shipped_date"
+        ],
+        [
+          "customer_id",
+          "required_date",
+          "shipped_date"
+        ],
+        [
+          "employee_id",
+          "order_date",
+          "ship_address"
+        ],
+        [
+          "employee_id",
+          "order_date",
+          "ship_city"
+        ],
+        [
+          "employee_id",
+          "order_date",
+          "ship_name"
+        ],
+        [
+          "employee_id",
+          "order_date",
+          "ship_postal_code"
+        ],
+        [
+          "employee_id",
+          "required_date",
+          "ship_address"
+        ],
+        [
+          "employee_id",
+          "required_date",
+          "ship_city"
+        ],
+        [
+          "employee_id",
+          "required_date",
+          "ship_name"
+        ],
+        [
+          "employee_id",
+          "required_date",
+          "ship_postal_code"
+        ],
+        [
+          "order_date",
+          "ship_address",
+          "shipped_date"
+        ],
+        [
+          "order_date",
+          "ship_city",
+          "shipped_date"
+        ],
+        [
+          "order_date",
+          "ship_name",
+          "shipped_date"
+        ],
+        [
+          "order_date",
+          "ship_postal_code",
+          "shipped_date"
+        ],
+        [
+          "required_date",
+          "ship_address",
+          "shipped_date"
+        ],
+        [
+          "required_date",
+          "ship_city",
+          "shipped_date"
+        ],
+        [
+          "required_date",
+          "ship_name",
+          "shipped_date"
+        ],
+        [
+          "required_date",
+          "ship_postal_code",
+          "shipped_date"
+        ],
+        [
+          "customer_id",
+          "employee_id",
+          "freight",
+          "ship_via"
+        ],
+        [
+          "employee_id",
+          "freight",
+          "ship_address",
+          "ship_via"
+        ],
+        [
+          "employee_id",
+          "freight",
+          "ship_city",
+          "ship_via"
+        ],
+        [
+          "employee_id",
+          "freight",
+          "ship_country",
+          "ship_via"
+        ],
+        [
+          "employee_id",
+          "freight",
+          "ship_name",
+          "ship_via"
+        ],
+        [
+          "employee_id",
+          "freight",
+          "ship_postal_code",
+          "ship_via"
+        ],
+        [
+          "employee_id",
+          "order_date",
+          "ship_country",
+          "ship_region"
+        ],
+        [
+          "employee_id",
+          "required_date",
+          "ship_country",
+          "ship_region"
+        ],
+        [
+          "order_date",
+          "ship_country",
+          "ship_region",
+          "ship_via",
+          "shipped_date"
+        ],
+        [
+          "required_date",
+          "ship_country",
+          "ship_region",
+          "ship_via",
+          "shipped_date"
+        ]
+      ],
+      "predicted_key": [
+        "order_id"
+      ]
+    },
+    "products": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.28,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 4: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (77 FDs)",
+          "Time: 22 ms",
+          "Elapsed time: 0:00:00.022 (22 ms)."
+        ],
+        "raw_lines": 77,
+        "fds_total": 77,
+        "result_file": "products_fds"
+      },
+      "status": "ok",
+      "n_fds": 77,
+      "n_lhs_candidates": 19,
+      "n_superkeys": 9,
+      "candidate_keys": [
+        [
+          "product_id"
+        ],
+        [
+          "product_name"
+        ],
+        [
+          "quantity_per_unit",
+          "units_in_stock"
+        ],
+        [
+          "unit_price",
+          "units_in_stock"
+        ],
+        [
+          "category_id",
+          "reorder_level",
+          "unit_price"
+        ],
+        [
+          "quantity_per_unit",
+          "reorder_level",
+          "unit_price"
+        ],
+        [
+          "reorder_level",
+          "supplier_id",
+          "unit_price"
+        ],
+        [
+          "reorder_level",
+          "supplier_id",
+          "units_in_stock"
+        ],
+        [
+          "reorder_level",
+          "unit_price",
+          "units_on_order"
+        ]
+      ],
+      "predicted_key": [
+        "product_id"
+      ]
+    },
+    "region": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.21,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 2 intersections; 2 validations; 0 invalid; 0 new candidates; --> 2 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (2 FDs)",
+          "Time: 14 ms",
+          "Elapsed time: 0:00:00.014 (14 ms)."
+        ],
+        "raw_lines": 2,
+        "fds_total": 2,
+        "result_file": "region_fds"
+      },
+      "status": "ok",
+      "n_fds": 2,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 2,
+      "candidate_keys": [
+        [
+          "region_description"
+        ],
+        [
+          "region_id"
+        ]
+      ],
+      "predicted_key": [
+        "region_description"
+      ]
+    },
+    "shippers": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 6 intersections; 6 validations; 0 invalid; 0 new candidates; --> 6 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (6 FDs)",
+          "Time: 13 ms",
+          "Elapsed time: 0:00:00.013 (13 ms)."
+        ],
+        "raw_lines": 6,
+        "fds_total": 6,
+        "result_file": "shippers_fds"
+      },
+      "status": "ok",
+      "n_fds": 6,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "company_name"
+        ],
+        [
+          "phone"
+        ],
+        [
+          "shipper_id"
+        ]
+      ],
+      "predicted_key": [
+        "company_name"
+      ]
+    },
+    "suppliers": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.28,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 3: 2 elements; (V)(C)(G); 2 intersections; 8 validations; 0 invalid; 0 new candidates; --> 8 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (88 FDs)",
+          "Time: 18 ms",
+          "Elapsed time: 0:00:00.019 (19 ms)."
+        ],
+        "raw_lines": 88,
+        "fds_total": 88,
+        "result_file": "suppliers_fds"
+      },
+      "status": "ok",
+      "n_fds": 88,
+      "n_lhs_candidates": 11,
+      "n_superkeys": 8,
+      "candidate_keys": [
+        [
+          "address"
+        ],
+        [
+          "city"
+        ],
+        [
+          "company_name"
+        ],
+        [
+          "contact_name"
+        ],
+        [
+          "phone"
+        ],
+        [
+          "postal_code"
+        ],
+        [
+          "supplier_id"
+        ],
+        [
+          "contact_title",
+          "country",
+          "fax"
+        ]
+      ],
+      "predicted_key": [
+        "address"
+      ]
+    },
+    "territories": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.21,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 2 elements; (V)(C)(G); 3 intersections; 3 validations; 0 invalid; 0 new candidates; --> 3 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (3 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 3,
+        "fds_total": 3,
+        "result_file": "territories_fds"
+      },
+      "status": "ok",
+      "n_fds": 3,
+      "n_lhs_candidates": 2,
+      "n_superkeys": 1,
+      "candidate_keys": [
+        [
+          "territory_id"
+        ]
+      ],
+      "predicted_key": [
+        "territory_id"
+      ]
+    },
+    "us_states": {
+      "meta": {
+        "separator": ",",
+        "elapsed_sec": 0.22,
+        "exit": 0,
+        "stderr_tail": [],
+        "stdout_tail": [
+          "\tLevel 1: 3 elements; (V)(C)(G); 9 intersections; 9 validations; 0 invalid; 0 new candidates; --> 9 FDs",
+          "Translating FD-tree into result format ...",
+          "... done! (9 FDs)",
+          "Time: 15 ms",
+          "Elapsed time: 0:00:00.015 (15 ms)."
+        ],
+        "raw_lines": 9,
+        "fds_total": 9,
+        "result_file": "us_states_fds"
+      },
+      "status": "ok",
+      "n_fds": 9,
+      "n_lhs_candidates": 3,
+      "n_superkeys": 3,
+      "candidate_keys": [
+        [
+          "state_abbr"
+        ],
+        [
+          "state_id"
+        ],
+        [
+          "state_name"
+        ]
+      ],
+      "predicted_key": [
+        "state_abbr"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dataset": "adventureworks",
+  "status": "ok",
+  "meta": {
+    "n_csv": 68,
+    "separator": ",",
+    "elapsed_sec": 5.55,
+    "exit": 0,
+    "stderr_tail": [],
+    "stdout_tail": [
+      "naryLoadTime: null",
+      "naryCompareTime: null",
+      "outputTime: 7",
+      "",
+      "Elapsed time: 0:00:04.064 (4064 ms)."
+    ],
+    "raw_lines": 11815,
+    "binder_inds_total": 11815,
+    "unary_inds_kept": 11815,
+    "self_inds_dropped": 0,
+    "result_file": "adventureworks_inds"
+  },
+  "binder_unary_inds": 11815,
+  "fk_unary": {
+    "tp": 86,
+    "fp": 11729,
+    "fn": 3,
+    "precision": 0.007278882776132036,
+    "recall": 0.9662921348314607,
+    "f1": 0.014448924731182795
+  },
+  "gt_unary_count": 89
+}

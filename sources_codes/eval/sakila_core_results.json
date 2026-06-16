@@ -1,0 +1,24 @@
+{
+  "sakila_core": {
+    "status": "ok",
+    "ground_truth_full_unary": 40,
+    "ground_truth_core_unary": 22,
+    "partition_fks_dropped": 18,
+    "fk_unary_core": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1": 0.9523809523809523
+    },
+    "fk_all_core": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1": 0.9523809523809523
+    }
+  }
+}

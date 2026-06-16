@@ -1,0 +1,736 @@
+{
+  "tables": {
+    "asm_reason": [
+      {
+        "type": "PK",
+        "columns": [
+          "r_reason_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_income_band": [
+      {
+        "type": "PK",
+        "columns": [
+          "ib_income_band_sk"
+        ],
+        "explainability": {
+          "confidence": "0.27",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_household_demographics": [
+      {
+        "type": "PK",
+        "columns": [
+          "hd_demo_sk"
+        ],
+        "explainability": {
+          "confidence": "0.89",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "hd_income_band_sk"
+        ],
+        "references": {
+          "table": "asm_income_band",
+          "column": "ib_income_band_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.081678
+        }
+      }
+    ],
+    "asm_warehouse": [
+      {
+        "type": "PK",
+        "columns": [
+          "w_warehouse_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_call_center": [
+      {
+        "type": "PK",
+        "columns": [
+          "cc_call_center_sk"
+        ],
+        "explainability": {
+          "confidence": "0.25",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_store": [
+      {
+        "type": "PK",
+        "columns": [
+          "s_store_sk"
+        ],
+        "explainability": {
+          "confidence": "0.64",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_web_page": [
+      {
+        "type": "PK",
+        "columns": [
+          "wp_web_page_sk"
+        ],
+        "explainability": {
+          "confidence": "0.13",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_customer_demographics": [
+      {
+        "type": "PK",
+        "columns": [
+          "cd_demo_sk"
+        ],
+        "explainability": {
+          "confidence": "0.89",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_time_dim": [
+      {
+        "type": "PK",
+        "columns": [
+          "t_time_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_web_returns": [
+      {
+        "type": "PK",
+        "columns": [
+          "wr_item_sk",
+          "wr_returning_cdemo_sk"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "4.5%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "wr_web_page_sk"
+        ],
+        "references": {
+          "table": "asm_web_page",
+          "column": "wp_web_page_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.075423
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "wr_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.78",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.95",
+          "jaccard": "0.95",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.95, jacc=0.95, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      }
+    ],
+    "asm_catalog_page": [
+      {
+        "type": "PK",
+        "columns": [
+          "cp_catalog_page_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_date_dim": [
+      {
+        "type": "PK",
+        "columns": [
+          "d_date_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_dbgen_version": [
+      {
+        "type": "PK",
+        "columns": [
+          "dv_version"
+        ],
+        "explainability": {
+          "confidence": "0.70",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "0.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_ship_mode": [
+      {
+        "type": "PK",
+        "columns": [
+          "sm_ship_mode_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_web_site": [
+      {
+        "type": "PK",
+        "columns": [
+          "web_site_sk"
+        ],
+        "explainability": {
+          "confidence": "0.61",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_promotion": [
+      {
+        "type": "PK",
+        "columns": [
+          "p_promo_id"
+        ],
+        "explainability": {
+          "confidence": "0.51",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "p_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.69",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.02",
+          "jaccard": "0.02",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.02, jacc=0.02, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      }
+    ],
+    "asm_inventory": [
+      {
+        "type": "PK",
+        "columns": [
+          "inv_item_sk",
+          "inv_quantity_on_hand"
+        ],
+        "explainability": {
+          "confidence": "0.96",
+          "uniqueness": "100.0%",
+          "null_rate": "5.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "inv_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      }
+    ],
+    "asm_catalog_returns": [
+      {
+        "type": "PK",
+        "columns": [
+          "cr_returned_time_sk"
+        ],
+        "explainability": {
+          "confidence": "0.74",
+          "uniqueness": "99.8%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.2%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "cr_call_center_sk"
+        ],
+        "references": {
+          "table": "asm_call_center",
+          "column": "cc_call_center_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.081678
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "cr_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.99",
+          "jaccard": "0.99",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.99, jacc=0.99, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      }
+    ],
+    "asm_customer": [
+      {
+        "type": "PK",
+        "columns": [
+          "c_customer_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_item": [
+      {
+        "type": "PK",
+        "columns": [
+          "i_item_sk"
+        ],
+        "explainability": {
+          "confidence": "0.89",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_catalog_sales": [
+      {
+        "type": "PK",
+        "columns": [
+          "cs_bill_cdemo_sk"
+        ],
+        "explainability": {
+          "confidence": "0.89",
+          "uniqueness": "99.6%",
+          "null_rate": "0.5%",
+          "duplicate_rate": "0.4%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "cs_call_center_sk"
+        ],
+        "references": {
+          "table": "asm_call_center",
+          "column": "cc_call_center_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.081678
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "cs_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      }
+    ],
+    "asm_web_sales": [
+      {
+        "type": "PK",
+        "columns": [
+          "ws_bill_cdemo_sk"
+        ],
+        "explainability": {
+          "confidence": "0.89",
+          "uniqueness": "99.6%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.4%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ws_web_page_sk"
+        ],
+        "references": {
+          "table": "asm_web_page",
+          "column": "wp_web_page_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.075423
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ws_web_site_sk"
+        ],
+        "references": {
+          "table": "asm_web_site",
+          "column": "web_site_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.056659
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ws_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      }
+    ],
+    "asm_store_sales": [
+      {
+        "type": "PK",
+        "columns": [
+          "ss_ticket_number"
+        ],
+        "explainability": {
+          "confidence": "0.84",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "1.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ss_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "ss_store_sk"
+        ],
+        "references": {
+          "table": "asm_store",
+          "column": "s_store_sk"
+        },
+        "explainability": {
+          "confidence": "0.74",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.50",
+          "jaccard": "0.50",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.50, jacc=0.50, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.081678
+        }
+      }
+    ],
+    "asm_store_returns": [
+      {
+        "type": "PK",
+        "columns": [
+          "sr_item_sk",
+          "sr_cdemo_sk"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "3.4%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "sr_item_sk"
+        ],
+        "references": {
+          "table": "asm_item",
+          "column": "i_item_sk"
+        },
+        "explainability": {
+          "confidence": "0.79",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=0.70",
+          "target_inbound_refs": 8,
+          "target_centrality": 0.225535
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "sr_store_sk"
+        ],
+        "references": {
+          "table": "asm_store",
+          "column": "s_store_sk"
+        },
+        "explainability": {
+          "confidence": "0.74",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.50",
+          "jaccard": "0.50",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.50, jacc=0.50, name=0.70",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.081678
+        }
+      }
+    ],
+    "asm_customer_address": [
+      {
+        "type": "PK",
+        "columns": [
+          "ca_address_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ]
+  }
+}

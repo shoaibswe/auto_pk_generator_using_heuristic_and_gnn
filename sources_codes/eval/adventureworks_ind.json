@@ -1,0 +1,25 @@
+{
+  "adventureworks": {
+    "status": "ok",
+    "ind_baseline_unary": {
+      "tp": 87,
+      "fp": 6150,
+      "fn": 2,
+      "precision": 0.013949013949013949,
+      "recall": 0.9775280898876404,
+      "f1": 0.027505532722099272
+    },
+    "ind_baseline_all": {
+      "tp": 87,
+      "fp": 6150,
+      "fn": 3,
+      "precision": 0.013949013949013949,
+      "recall": 0.9666666666666667,
+      "f1": 0.02750118539592224
+    },
+    "predicted_count": 6237,
+    "gt_unary_count": 89,
+    "gt_component_total": 91,
+    "gt_relation_total": 90
+  }
+}

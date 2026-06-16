@@ -1,0 +1,1779 @@
+{
+  "artefact_scoring": {
+    "dvdrental": {
+      "dataset": "dvdrental",
+      "status": "ok",
+      "fk_unary": {
+        "tp": 17,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.85,
+        "recall": 0.9444444444444444,
+        "f1": 0.8947368421052632
+      },
+      "fk_all": {
+        "tp": 17,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.85,
+        "recall": 0.9444444444444444,
+        "f1": 0.8947368421052632
+      },
+      "pk": {
+        "accuracy": 0.9333333333333333,
+        "correct": 14,
+        "scored": 15
+      },
+      "counts": {
+        "gt_fk_components": 18,
+        "gt_fk_unary": 18,
+        "gt_fk_relations": 18,
+        "pred_fk_components": 20,
+        "pred_fk_relations": 20,
+        "gt_pk_tables": 15
+      }
+    },
+    "chinook": {
+      "dataset": "chinook",
+      "status": "ok",
+      "fk_unary": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8181818181818182,
+        "f1": 0.9
+      },
+      "fk_all": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8181818181818182,
+        "f1": 0.9
+      },
+      "pk": {
+        "accuracy": 1.0,
+        "correct": 11,
+        "scored": 11
+      },
+      "counts": {
+        "gt_fk_components": 11,
+        "gt_fk_unary": 11,
+        "gt_fk_relations": 11,
+        "pred_fk_components": 9,
+        "pred_fk_relations": 9,
+        "gt_pk_tables": 11
+      }
+    },
+    "tpch": {
+      "dataset": "tpch",
+      "status": "ok",
+      "fk_unary": {
+        "tp": 7,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.7777777777777778,
+        "recall": 1.0,
+        "f1": 0.8750000000000001
+      },
+      "fk_all": {
+        "tp": 7,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "f1": 0.823529411764706
+      },
+      "pk": {
+        "accuracy": 0.75,
+        "correct": 6,
+        "scored": 8
+      },
+      "counts": {
+        "gt_fk_components": 9,
+        "gt_fk_unary": 7,
+        "gt_fk_relations": 8,
+        "pred_fk_components": 9,
+        "pred_fk_relations": 9,
+        "gt_pk_tables": 8
+      }
+    },
+    "tpcds": {
+      "dataset": "tpcds",
+      "status": "missing_ddl"
+    }
+  },
+  "ind_baseline": {
+    "dvdrental": {
+      "status": "ok",
+      "ind_baseline_unary": {
+        "tp": 18,
+        "fp": 529,
+        "fn": 0,
+        "precision": 0.03290676416819013,
+        "recall": 1.0,
+        "f1": 0.06371681415929203
+      },
+      "ind_baseline_all": {
+        "tp": 18,
+        "fp": 529,
+        "fn": 0,
+        "precision": 0.03290676416819013,
+        "recall": 1.0,
+        "f1": 0.06371681415929203
+      },
+      "predicted_count": 547,
+      "gt_unary_count": 18,
+      "gt_component_total": 18,
+      "gt_relation_total": 18
+    },
+    "chinook": {
+      "status": "ok",
+      "ind_baseline_unary": {
+        "tp": 10,
+        "fp": 180,
+        "fn": 1,
+        "precision": 0.05263157894736842,
+        "recall": 0.9090909090909091,
+        "f1": 0.09950248756218903
+      },
+      "ind_baseline_all": {
+        "tp": 10,
+        "fp": 180,
+        "fn": 1,
+        "precision": 0.05263157894736842,
+        "recall": 0.9090909090909091,
+        "f1": 0.09950248756218903
+      },
+      "predicted_count": 190,
+      "gt_unary_count": 11,
+      "gt_component_total": 11,
+      "gt_relation_total": 11
+    },
+    "tpch": {
+      "status": "ok",
+      "ind_baseline_unary": {
+        "tp": 7,
+        "fp": 119,
+        "fn": 0,
+        "precision": 0.05555555555555555,
+        "recall": 1.0,
+        "f1": 0.10526315789473684
+      },
+      "ind_baseline_all": {
+        "tp": 7,
+        "fp": 119,
+        "fn": 1,
+        "precision": 0.05555555555555555,
+        "recall": 0.875,
+        "f1": 0.10447761194029849
+      },
+      "predicted_count": 126,
+      "gt_unary_count": 7,
+      "gt_component_total": 9,
+      "gt_relation_total": 8
+    },
+    "tpcds": {
+      "status": "missing_ddl"
+    }
+  },
+  "sensitivity": {
+    "dvdrental": {
+      "dataset": "dvdrental",
+      "status": "ok",
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        },
+        {
+          "threshold": 0.7,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        },
+        {
+          "threshold": 0.8,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        },
+        {
+          "threshold": 0.9,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        },
+        {
+          "threshold": 0.95,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        },
+        {
+          "threshold": 0.99,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        },
+        {
+          "threshold": 1.0,
+          "n_predicted_relations": 20,
+          "fk_unary": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          },
+          "fk_all": {
+            "tp": 17,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "f1": 0.8947368421052632
+          }
+        }
+      ]
+    },
+    "chinook": {
+      "dataset": "chinook",
+      "status": "ok",
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        },
+        {
+          "threshold": 0.7,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        },
+        {
+          "threshold": 0.8,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        },
+        {
+          "threshold": 0.9,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        },
+        {
+          "threshold": 0.95,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        },
+        {
+          "threshold": 0.99,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        },
+        {
+          "threshold": 1.0,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "fk_all": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        }
+      ]
+    },
+    "tpch": {
+      "dataset": "tpch",
+      "status": "ok",
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        },
+        {
+          "threshold": 0.7,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        },
+        {
+          "threshold": 0.8,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        },
+        {
+          "threshold": 0.9,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        },
+        {
+          "threshold": 0.95,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        },
+        {
+          "threshold": 0.99,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        },
+        {
+          "threshold": 1.0,
+          "n_predicted_relations": 9,
+          "fk_unary": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.7777777777777778,
+            "recall": 1.0,
+            "f1": 0.8750000000000001
+          },
+          "fk_all": {
+            "tp": 7,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.7777777777777778,
+            "recall": 0.875,
+            "f1": 0.823529411764706
+          }
+        }
+      ]
+    },
+    "tpcds": {
+      "dataset": "tpcds",
+      "status": "missing_ddl"
+    }
+  },
+  "error_analysis": {
+    "dvdrental": {
+      "dataset": "dvdrental",
+      "status": "ok",
+      "unary": {
+        "tp": [
+          {
+            "src_table": "address",
+            "src_col": "city_id",
+            "tgt_table": "city",
+            "tgt_col": "city_id"
+          },
+          {
+            "src_table": "city",
+            "src_col": "country_id",
+            "tgt_table": "country",
+            "tgt_col": "country_id"
+          },
+          {
+            "src_table": "customer",
+            "src_col": "address_id",
+            "tgt_table": "address",
+            "tgt_col": "address_id"
+          },
+          {
+            "src_table": "film",
+            "src_col": "language_id",
+            "tgt_table": "language",
+            "tgt_col": "language_id"
+          },
+          {
+            "src_table": "film_actor",
+            "src_col": "actor_id",
+            "tgt_table": "actor",
+            "tgt_col": "actor_id"
+          },
+          {
+            "src_table": "film_actor",
+            "src_col": "film_id",
+            "tgt_table": "film",
+            "tgt_col": "film_id"
+          },
+          {
+            "src_table": "film_category",
+            "src_col": "category_id",
+            "tgt_table": "category",
+            "tgt_col": "category_id"
+          },
+          {
+            "src_table": "inventory",
+            "src_col": "film_id",
+            "tgt_table": "film",
+            "tgt_col": "film_id"
+          },
+          {
+            "src_table": "payment",
+            "src_col": "customer_id",
+            "tgt_table": "customer",
+            "tgt_col": "customer_id"
+          },
+          {
+            "src_table": "payment",
+            "src_col": "rental_id",
+            "tgt_table": "rental",
+            "tgt_col": "rental_id"
+          },
+          {
+            "src_table": "payment",
+            "src_col": "staff_id",
+            "tgt_table": "staff",
+            "tgt_col": "staff_id"
+          },
+          {
+            "src_table": "rental",
+            "src_col": "customer_id",
+            "tgt_table": "customer",
+            "tgt_col": "customer_id"
+          },
+          {
+            "src_table": "rental",
+            "src_col": "inventory_id",
+            "tgt_table": "inventory",
+            "tgt_col": "inventory_id"
+          },
+          {
+            "src_table": "rental",
+            "src_col": "staff_id",
+            "tgt_table": "staff",
+            "tgt_col": "staff_id"
+          },
+          {
+            "src_table": "staff",
+            "src_col": "address_id",
+            "tgt_table": "address",
+            "tgt_col": "address_id"
+          },
+          {
+            "src_table": "store",
+            "src_col": "address_id",
+            "tgt_table": "address",
+            "tgt_col": "address_id"
+          },
+          {
+            "src_table": "store",
+            "src_col": "manager_staff_id",
+            "tgt_table": "staff",
+            "tgt_col": "staff_id"
+          }
+        ],
+        "fp": [
+          {
+            "src_table": "customer",
+            "src_col": "store_id",
+            "tgt_table": "store",
+            "tgt_col": "store_id"
+          },
+          {
+            "src_table": "inventory",
+            "src_col": "store_id",
+            "tgt_table": "store",
+            "tgt_col": "store_id"
+          },
+          {
+            "src_table": "staff",
+            "src_col": "store_id",
+            "tgt_table": "store",
+            "tgt_col": "store_id"
+          }
+        ],
+        "fn": [
+          {
+            "src_table": "film_category",
+            "src_col": "film_id",
+            "tgt_table": "film",
+            "tgt_col": "film_id"
+          }
+        ]
+      },
+      "relation_level": {
+        "tp": [
+          {
+            "src_table": "address",
+            "src_cols": [
+              "city_id"
+            ],
+            "tgt_table": "city",
+            "tgt_cols": [
+              "city_id"
+            ]
+          },
+          {
+            "src_table": "city",
+            "src_cols": [
+              "country_id"
+            ],
+            "tgt_table": "country",
+            "tgt_cols": [
+              "country_id"
+            ]
+          },
+          {
+            "src_table": "customer",
+            "src_cols": [
+              "address_id"
+            ],
+            "tgt_table": "address",
+            "tgt_cols": [
+              "address_id"
+            ]
+          },
+          {
+            "src_table": "film",
+            "src_cols": [
+              "language_id"
+            ],
+            "tgt_table": "language",
+            "tgt_cols": [
+              "language_id"
+            ]
+          },
+          {
+            "src_table": "film_actor",
+            "src_cols": [
+              "actor_id"
+            ],
+            "tgt_table": "actor",
+            "tgt_cols": [
+              "actor_id"
+            ]
+          },
+          {
+            "src_table": "film_actor",
+            "src_cols": [
+              "film_id"
+            ],
+            "tgt_table": "film",
+            "tgt_cols": [
+              "film_id"
+            ]
+          },
+          {
+            "src_table": "film_category",
+            "src_cols": [
+              "category_id"
+            ],
+            "tgt_table": "category",
+            "tgt_cols": [
+              "category_id"
+            ]
+          },
+          {
+            "src_table": "inventory",
+            "src_cols": [
+              "film_id"
+            ],
+            "tgt_table": "film",
+            "tgt_cols": [
+              "film_id"
+            ]
+          },
+          {
+            "src_table": "payment",
+            "src_cols": [
+              "customer_id"
+            ],
+            "tgt_table": "customer",
+            "tgt_cols": [
+              "customer_id"
+            ]
+          },
+          {
+            "src_table": "payment",
+            "src_cols": [
+              "rental_id"
+            ],
+            "tgt_table": "rental",
+            "tgt_cols": [
+              "rental_id"
+            ]
+          },
+          {
+            "src_table": "payment",
+            "src_cols": [
+              "staff_id"
+            ],
+            "tgt_table": "staff",
+            "tgt_cols": [
+              "staff_id"
+            ]
+          },
+          {
+            "src_table": "rental",
+            "src_cols": [
+              "customer_id"
+            ],
+            "tgt_table": "customer",
+            "tgt_cols": [
+              "customer_id"
+            ]
+          },
+          {
+            "src_table": "rental",
+            "src_cols": [
+              "inventory_id"
+            ],
+            "tgt_table": "inventory",
+            "tgt_cols": [
+              "inventory_id"
+            ]
+          },
+          {
+            "src_table": "rental",
+            "src_cols": [
+              "staff_id"
+            ],
+            "tgt_table": "staff",
+            "tgt_cols": [
+              "staff_id"
+            ]
+          },
+          {
+            "src_table": "staff",
+            "src_cols": [
+              "address_id"
+            ],
+            "tgt_table": "address",
+            "tgt_cols": [
+              "address_id"
+            ]
+          },
+          {
+            "src_table": "store",
+            "src_cols": [
+              "address_id"
+            ],
+            "tgt_table": "address",
+            "tgt_cols": [
+              "address_id"
+            ]
+          },
+          {
+            "src_table": "store",
+            "src_cols": [
+              "manager_staff_id"
+            ],
+            "tgt_table": "staff",
+            "tgt_cols": [
+              "staff_id"
+            ]
+          }
+        ],
+        "fp": [
+          {
+            "src_table": "customer",
+            "src_cols": [
+              "store_id"
+            ],
+            "tgt_table": "store",
+            "tgt_cols": [
+              "store_id"
+            ]
+          },
+          {
+            "src_table": "inventory",
+            "src_cols": [
+              "store_id"
+            ],
+            "tgt_table": "store",
+            "tgt_cols": [
+              "store_id"
+            ]
+          },
+          {
+            "src_table": "staff",
+            "src_cols": [
+              "store_id"
+            ],
+            "tgt_table": "store",
+            "tgt_cols": [
+              "store_id"
+            ]
+          }
+        ],
+        "fn": [
+          {
+            "src_table": "film_category",
+            "src_cols": [
+              "film_id"
+            ],
+            "tgt_table": "film",
+            "tgt_cols": [
+              "film_id"
+            ]
+          }
+        ]
+      }
+    },
+    "chinook": {
+      "dataset": "chinook",
+      "status": "ok",
+      "unary": {
+        "tp": [
+          {
+            "src_table": "album",
+            "src_col": "artist_id",
+            "tgt_table": "artist",
+            "tgt_col": "artist_id"
+          },
+          {
+            "src_table": "invoice",
+            "src_col": "customer_id",
+            "tgt_table": "customer",
+            "tgt_col": "customer_id"
+          },
+          {
+            "src_table": "invoice_line",
+            "src_col": "invoice_id",
+            "tgt_table": "invoice",
+            "tgt_col": "invoice_id"
+          },
+          {
+            "src_table": "invoice_line",
+            "src_col": "track_id",
+            "tgt_table": "track",
+            "tgt_col": "track_id"
+          },
+          {
+            "src_table": "playlist_track",
+            "src_col": "playlist_id",
+            "tgt_table": "playlist",
+            "tgt_col": "playlist_id"
+          },
+          {
+            "src_table": "playlist_track",
+            "src_col": "track_id",
+            "tgt_table": "track",
+            "tgt_col": "track_id"
+          },
+          {
+            "src_table": "track",
+            "src_col": "album_id",
+            "tgt_table": "album",
+            "tgt_col": "album_id"
+          },
+          {
+            "src_table": "track",
+            "src_col": "genre_id",
+            "tgt_table": "genre",
+            "tgt_col": "genre_id"
+          },
+          {
+            "src_table": "track",
+            "src_col": "media_type_id",
+            "tgt_table": "media_type",
+            "tgt_col": "media_type_id"
+          }
+        ],
+        "fp": [],
+        "fn": [
+          {
+            "src_table": "customer",
+            "src_col": "support_rep_id",
+            "tgt_table": "employee",
+            "tgt_col": "employee_id"
+          },
+          {
+            "src_table": "employee",
+            "src_col": "reports_to",
+            "tgt_table": "employee",
+            "tgt_col": "employee_id"
+          }
+        ]
+      },
+      "relation_level": {
+        "tp": [
+          {
+            "src_table": "album",
+            "src_cols": [
+              "artist_id"
+            ],
+            "tgt_table": "artist",
+            "tgt_cols": [
+              "artist_id"
+            ]
+          },
+          {
+            "src_table": "invoice",
+            "src_cols": [
+              "customer_id"
+            ],
+            "tgt_table": "customer",
+            "tgt_cols": [
+              "customer_id"
+            ]
+          },
+          {
+            "src_table": "invoice_line",
+            "src_cols": [
+              "invoice_id"
+            ],
+            "tgt_table": "invoice",
+            "tgt_cols": [
+              "invoice_id"
+            ]
+          },
+          {
+            "src_table": "invoice_line",
+            "src_cols": [
+              "track_id"
+            ],
+            "tgt_table": "track",
+            "tgt_cols": [
+              "track_id"
+            ]
+          },
+          {
+            "src_table": "playlist_track",
+            "src_cols": [
+              "playlist_id"
+            ],
+            "tgt_table": "playlist",
+            "tgt_cols": [
+              "playlist_id"
+            ]
+          },
+          {
+            "src_table": "playlist_track",
+            "src_cols": [
+              "track_id"
+            ],
+            "tgt_table": "track",
+            "tgt_cols": [
+              "track_id"
+            ]
+          },
+          {
+            "src_table": "track",
+            "src_cols": [
+              "album_id"
+            ],
+            "tgt_table": "album",
+            "tgt_cols": [
+              "album_id"
+            ]
+          },
+          {
+            "src_table": "track",
+            "src_cols": [
+              "genre_id"
+            ],
+            "tgt_table": "genre",
+            "tgt_cols": [
+              "genre_id"
+            ]
+          },
+          {
+            "src_table": "track",
+            "src_cols": [
+              "media_type_id"
+            ],
+            "tgt_table": "media_type",
+            "tgt_cols": [
+              "media_type_id"
+            ]
+          }
+        ],
+        "fp": [],
+        "fn": [
+          {
+            "src_table": "customer",
+            "src_cols": [
+              "support_rep_id"
+            ],
+            "tgt_table": "employee",
+            "tgt_cols": [
+              "employee_id"
+            ]
+          },
+          {
+            "src_table": "employee",
+            "src_cols": [
+              "reports_to"
+            ],
+            "tgt_table": "employee",
+            "tgt_cols": [
+              "employee_id"
+            ]
+          }
+        ]
+      }
+    },
+    "tpch": {
+      "dataset": "tpch",
+      "status": "ok",
+      "unary": {
+        "tp": [
+          {
+            "src_table": "customer",
+            "src_col": "c_nationkey",
+            "tgt_table": "nation",
+            "tgt_col": "n_nationkey"
+          },
+          {
+            "src_table": "lineitem",
+            "src_col": "l_orderkey",
+            "tgt_table": "orders",
+            "tgt_col": "o_orderkey"
+          },
+          {
+            "src_table": "nation",
+            "src_col": "n_regionkey",
+            "tgt_table": "region",
+            "tgt_col": "r_regionkey"
+          },
+          {
+            "src_table": "orders",
+            "src_col": "o_custkey",
+            "tgt_table": "customer",
+            "tgt_col": "c_custkey"
+          },
+          {
+            "src_table": "partsupp",
+            "src_col": "ps_partkey",
+            "tgt_table": "part",
+            "tgt_col": "p_partkey"
+          },
+          {
+            "src_table": "partsupp",
+            "src_col": "ps_suppkey",
+            "tgt_table": "supplier",
+            "tgt_col": "s_suppkey"
+          },
+          {
+            "src_table": "supplier",
+            "src_col": "s_nationkey",
+            "tgt_table": "nation",
+            "tgt_col": "n_nationkey"
+          }
+        ],
+        "fp": [
+          {
+            "src_table": "lineitem",
+            "src_col": "l_partkey",
+            "tgt_table": "part",
+            "tgt_col": "p_partkey"
+          },
+          {
+            "src_table": "lineitem",
+            "src_col": "l_suppkey",
+            "tgt_table": "supplier",
+            "tgt_col": "s_suppkey"
+          }
+        ],
+        "fn": []
+      },
+      "relation_level": {
+        "tp": [
+          {
+            "src_table": "customer",
+            "src_cols": [
+              "c_nationkey"
+            ],
+            "tgt_table": "nation",
+            "tgt_cols": [
+              "n_nationkey"
+            ]
+          },
+          {
+            "src_table": "lineitem",
+            "src_cols": [
+              "l_orderkey"
+            ],
+            "tgt_table": "orders",
+            "tgt_cols": [
+              "o_orderkey"
+            ]
+          },
+          {
+            "src_table": "nation",
+            "src_cols": [
+              "n_regionkey"
+            ],
+            "tgt_table": "region",
+            "tgt_cols": [
+              "r_regionkey"
+            ]
+          },
+          {
+            "src_table": "orders",
+            "src_cols": [
+              "o_custkey"
+            ],
+            "tgt_table": "customer",
+            "tgt_cols": [
+              "c_custkey"
+            ]
+          },
+          {
+            "src_table": "partsupp",
+            "src_cols": [
+              "ps_partkey"
+            ],
+            "tgt_table": "part",
+            "tgt_cols": [
+              "p_partkey"
+            ]
+          },
+          {
+            "src_table": "partsupp",
+            "src_cols": [
+              "ps_suppkey"
+            ],
+            "tgt_table": "supplier",
+            "tgt_cols": [
+              "s_suppkey"
+            ]
+          },
+          {
+            "src_table": "supplier",
+            "src_cols": [
+              "s_nationkey"
+            ],
+            "tgt_table": "nation",
+            "tgt_cols": [
+              "n_nationkey"
+            ]
+          }
+        ],
+        "fp": [
+          {
+            "src_table": "lineitem",
+            "src_cols": [
+              "l_partkey"
+            ],
+            "tgt_table": "part",
+            "tgt_cols": [
+              "p_partkey"
+            ]
+          },
+          {
+            "src_table": "lineitem",
+            "src_cols": [
+              "l_suppkey"
+            ],
+            "tgt_table": "supplier",
+            "tgt_cols": [
+              "s_suppkey"
+            ]
+          }
+        ],
+        "fn": [
+          {
+            "src_table": "lineitem",
+            "src_cols": [
+              "l_partkey",
+              "l_suppkey"
+            ],
+            "tgt_table": "partsupp",
+            "tgt_cols": [
+              "ps_partkey",
+              "ps_suppkey"
+            ]
+          }
+        ]
+      }
+    },
+    "tpcds": {
+      "dataset": "tpcds",
+      "status": "missing_ddl"
+    }
+  },
+  "llm_baseline": {
+    "dvdrental": {
+      "status": "ok",
+      "model": "gemma3:12b",
+      "pk": {
+        "accuracy": 1.0,
+        "correct": 15,
+        "scored": 15
+      },
+      "fk_unary": {
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "fk_all": {
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "counts": {
+        "pred_fk_components": 18,
+        "pred_fk_relations": 18,
+        "gt_fk_unary": 18,
+        "gt_fk_components": 18,
+        "gt_fk_relations": 18
+      }
+    },
+    "chinook": {
+      "status": "ok",
+      "model": "gemma3:12b",
+      "pk": {
+        "accuracy": 1.0,
+        "correct": 11,
+        "scored": 11
+      },
+      "fk_unary": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "fk_all": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "counts": {
+        "pred_fk_components": 11,
+        "pred_fk_relations": 11,
+        "gt_fk_unary": 11,
+        "gt_fk_components": 11,
+        "gt_fk_relations": 11
+      }
+    },
+    "tpch": {
+      "status": "ok",
+      "model": "gemma3:12b",
+      "pk": {
+        "accuracy": 1.0,
+        "correct": 8,
+        "scored": 8
+      },
+      "fk_unary": {
+        "tp": 7,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.7777777777777778,
+        "recall": 1.0,
+        "f1": 0.8750000000000001
+      },
+      "fk_all": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "counts": {
+        "pred_fk_components": 9,
+        "pred_fk_relations": 8,
+        "gt_fk_unary": 7,
+        "gt_fk_components": 9,
+        "gt_fk_relations": 8
+      }
+    },
+    "tpcds": {
+      "status": "missing_ddl"
+    }
+  },
+  "ind_baseline_with_postfilter": {
+    "dvdrental": {
+      "status": "ok",
+      "gt_unary_count": 18,
+      "gt_relation_count": 18,
+      "ind_only": {
+        "n": 547,
+        "unary": {
+          "tp": 18,
+          "fp": 529,
+          "fn": 0,
+          "precision": 0.03290676416819013,
+          "recall": 1.0,
+          "f1": 0.06371681415929203
+        },
+        "all": {
+          "tp": 18,
+          "fp": 529,
+          "fn": 0,
+          "precision": 0.03290676416819013,
+          "recall": 1.0,
+          "f1": 0.06371681415929203
+        }
+      },
+      "ind_idscore": {
+        "n": 506,
+        "unary": {
+          "tp": 18,
+          "fp": 488,
+          "fn": 0,
+          "precision": 0.03557312252964427,
+          "recall": 1.0,
+          "f1": 0.06870229007633588
+        },
+        "all": {
+          "tp": 18,
+          "fp": 488,
+          "fn": 0,
+          "precision": 0.03557312252964427,
+          "recall": 1.0,
+          "f1": 0.06870229007633588
+        }
+      },
+      "ind_idscore_namesim_0_5": {
+        "n": 39,
+        "unary": {
+          "tp": 18,
+          "fp": 21,
+          "fn": 0,
+          "precision": 0.46153846153846156,
+          "recall": 1.0,
+          "f1": 0.631578947368421
+        },
+        "all": {
+          "tp": 18,
+          "fp": 21,
+          "fn": 0,
+          "precision": 0.46153846153846156,
+          "recall": 1.0,
+          "f1": 0.631578947368421
+        }
+      },
+      "ind_idscore_namesim_0_7": {
+        "n": 39,
+        "unary": {
+          "tp": 18,
+          "fp": 21,
+          "fn": 0,
+          "precision": 0.46153846153846156,
+          "recall": 1.0,
+          "f1": 0.631578947368421
+        },
+        "all": {
+          "tp": 18,
+          "fp": 21,
+          "fn": 0,
+          "precision": 0.46153846153846156,
+          "recall": 1.0,
+          "f1": 0.631578947368421
+        }
+      }
+    },
+    "chinook": {
+      "status": "ok",
+      "gt_unary_count": 11,
+      "gt_relation_count": 11,
+      "ind_only": {
+        "n": 190,
+        "unary": {
+          "tp": 10,
+          "fp": 180,
+          "fn": 1,
+          "precision": 0.05263157894736842,
+          "recall": 0.9090909090909091,
+          "f1": 0.09950248756218903
+        },
+        "all": {
+          "tp": 10,
+          "fp": 180,
+          "fn": 1,
+          "precision": 0.05263157894736842,
+          "recall": 0.9090909090909091,
+          "f1": 0.09950248756218903
+        }
+      },
+      "ind_idscore": {
+        "n": 146,
+        "unary": {
+          "tp": 10,
+          "fp": 136,
+          "fn": 1,
+          "precision": 0.0684931506849315,
+          "recall": 0.9090909090909091,
+          "f1": 0.12738853503184713
+        },
+        "all": {
+          "tp": 10,
+          "fp": 136,
+          "fn": 1,
+          "precision": 0.0684931506849315,
+          "recall": 0.9090909090909091,
+          "f1": 0.12738853503184713
+        }
+      },
+      "ind_idscore_namesim_0_5": {
+        "n": 9,
+        "unary": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8181818181818182,
+          "f1": 0.9
+        },
+        "all": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8181818181818182,
+          "f1": 0.9
+        }
+      },
+      "ind_idscore_namesim_0_7": {
+        "n": 9,
+        "unary": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8181818181818182,
+          "f1": 0.9
+        },
+        "all": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8181818181818182,
+          "f1": 0.9
+        }
+      }
+    },
+    "tpch": {
+      "status": "ok",
+      "gt_unary_count": 7,
+      "gt_relation_count": 8,
+      "ind_only": {
+        "n": 126,
+        "unary": {
+          "tp": 7,
+          "fp": 119,
+          "fn": 0,
+          "precision": 0.05555555555555555,
+          "recall": 1.0,
+          "f1": 0.10526315789473684
+        },
+        "all": {
+          "tp": 7,
+          "fp": 119,
+          "fn": 1,
+          "precision": 0.05555555555555555,
+          "recall": 0.875,
+          "f1": 0.10447761194029849
+        }
+      },
+      "ind_idscore": {
+        "n": 103,
+        "unary": {
+          "tp": 7,
+          "fp": 96,
+          "fn": 0,
+          "precision": 0.06796116504854369,
+          "recall": 1.0,
+          "f1": 0.12727272727272726
+        },
+        "all": {
+          "tp": 7,
+          "fp": 96,
+          "fn": 1,
+          "precision": 0.06796116504854369,
+          "recall": 0.875,
+          "f1": 0.12612612612612614
+        }
+      },
+      "ind_idscore_namesim_0_5": {
+        "n": 5,
+        "unary": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 3,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "f1": 0.6666666666666666
+        },
+        "all": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8,
+          "recall": 0.5,
+          "f1": 0.6153846153846154
+        }
+      },
+      "ind_idscore_namesim_0_7": {
+        "n": 5,
+        "unary": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 3,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "f1": 0.6666666666666666
+        },
+        "all": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8,
+          "recall": 0.5,
+          "f1": 0.6153846153846154
+        }
+      }
+    },
+    "tpcds": {
+      "status": "missing_ddl"
+    }
+  },
+  "multi_seed_headline": {
+    "seeds": [
+      42,
+      123,
+      256,
+      789,
+      1024
+    ],
+    "loss": "BCEWithLogitsLoss(pos_weight=3.0)",
+    "source": "executed Sieve_GNN.ipynb (in-notebook seed sweep)",
+    "dvdrental": {
+      "pk_accuracy_mean": 0.9333,
+      "pk_accuracy_std": 0.0,
+      "fk_precision_mean": 0.85,
+      "fk_precision_std": 0.0,
+      "fk_recall_mean": 0.9444,
+      "fk_recall_std": 0.0,
+      "fk_f1_mean": 0.8947,
+      "fk_f1_std": 0.0,
+      "validated_fk_count_per_seed": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    "chinook": {
+      "pk_accuracy_mean": 1.0,
+      "pk_accuracy_std": 0.0,
+      "fk_precision_mean": 1.0,
+      "fk_precision_std": 0.0,
+      "fk_recall_mean": 0.8182,
+      "fk_recall_std": 0.0,
+      "fk_f1_mean": 0.9,
+      "fk_f1_std": 0.0,
+      "validated_fk_count_per_seed": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    "tpch": {
+      "pk_accuracy_mean": 0.75,
+      "pk_accuracy_std": 0.0,
+      "fk_precision_mean": 0.7778,
+      "fk_precision_std": 0.0,
+      "fk_recall_mean": 1.0,
+      "fk_recall_std": 0.0,
+      "fk_f1_mean": 0.875,
+      "fk_f1_std": 0.0,
+      "validated_fk_count_per_seed": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    }
+  },
+  "tpcds_qualitative": {
+    "tables": 25,
+    "pks_discovered": 25,
+    "fks_in_schema_final_json": 0,
+    "fks_in_relationships_csv": 1,
+    "ground_truth": "not run; TPC-DS DDL not redistributed in this workspace",
+    "single_validated_fk_candidate": {
+      "source": "store.s_store_id",
+      "target": "promotion.p_promo_id",
+      "note": "Cross-table integer-ID overlap; not a true FK in the published TPC-DS schema. Confidence 0.64."
+    }
+  }
+}

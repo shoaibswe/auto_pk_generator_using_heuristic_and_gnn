@@ -1,0 +1,25 @@
+{
+  "tpcds": {
+    "status": "ok",
+    "ind_baseline_unary": {
+      "tp": 16,
+      "fp": 5435,
+      "fn": 86,
+      "precision": 0.002935241240139424,
+      "recall": 0.1568627450980392,
+      "f1": 0.005762650819376913
+    },
+    "ind_baseline_all": {
+      "tp": 16,
+      "fp": 5435,
+      "fn": 86,
+      "precision": 0.002935241240139424,
+      "recall": 0.1568627450980392,
+      "f1": 0.005762650819376913
+    },
+    "predicted_count": 5451,
+    "gt_unary_count": 102,
+    "gt_component_total": 102,
+    "gt_relation_total": 102
+  }
+}

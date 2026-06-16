@@ -1,0 +1,10 @@
+Source Table,Source Col,Target Table,Target Col,Confidence,Inclusion_A_to_B,Inclusion_B_to_A,Jaccard,Reason
+asm_playlist_track,['playlist_id'],asm_playlist,playlist_id,0.85,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00"
+asm_track,['media_type_id'],asm_media_type,media_type_id,0.85,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00"
+asm_track,['genre_id'],asm_genre,genre_id,0.85,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00"
+asm_track,['album_id'],asm_album,album_id,0.85,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00"
+asm_invoice_line,['invoice_id'],asm_invoice,invoice_id,0.85,1.00,0.99,0.99,"inc(A->B)=1.00, inc(B->A)=0.99, jacc=0.99, name=1.00"
+asm_invoice,['customer_id'],asm_customer,customer_id,0.85,1.00,1.00,1.00,"inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00"
+asm_playlist_track,['track_id'],asm_track,track_id,0.84,1.00,0.87,0.87,"inc(A->B)=1.00, inc(B->A)=0.87, jacc=0.87, name=1.00"
+asm_album,['artist_id'],asm_artist,artist_id,0.82,1.00,0.68,0.68,"inc(A->B)=1.00, inc(B->A)=0.68, jacc=0.68, name=1.00"
+asm_invoice_line,['track_id'],asm_track,track_id,0.80,1.00,0.47,0.47,"inc(A->B)=1.00, inc(B->A)=0.47, jacc=0.47, name=1.00"

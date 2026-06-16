@@ -1,0 +1,363 @@
+{
+  "tables": {
+    "asm_playlist": [
+      {
+        "type": "PK",
+        "columns": [
+          "playlist_id"
+        ],
+        "explainability": {
+          "confidence": "1.00",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_media_type": [
+      {
+        "type": "PK",
+        "columns": [
+          "media_type_id"
+        ],
+        "explainability": {
+          "confidence": "1.00",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_playlist_track": [
+      {
+        "type": "PK",
+        "columns": [
+          "track_id",
+          "playlist_id"
+        ],
+        "explainability": {
+          "confidence": "0.91",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "playlist_id"
+        ],
+        "references": {
+          "table": "asm_playlist",
+          "column": "playlist_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.090308
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "track_id"
+        ],
+        "references": {
+          "table": "asm_track",
+          "column": "track_id"
+        },
+        "explainability": {
+          "confidence": "0.84",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.87",
+          "jaccard": "0.87",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.87, jacc=0.87, name=1.00",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.117242
+        }
+      }
+    ],
+    "asm_genre": [
+      {
+        "type": "PK",
+        "columns": [
+          "genre_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_artist": [
+      {
+        "type": "PK",
+        "columns": [
+          "artist_id"
+        ],
+        "explainability": {
+          "confidence": "0.98",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_album": [
+      {
+        "type": "PK",
+        "columns": [
+          "album_id"
+        ],
+        "explainability": {
+          "confidence": "0.98",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "artist_id"
+        ],
+        "references": {
+          "table": "asm_artist",
+          "column": "artist_id"
+        },
+        "explainability": {
+          "confidence": "0.82",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.68",
+          "jaccard": "0.68",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.68, jacc=0.68, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.145479
+        }
+      }
+    ],
+    "asm_invoice_line": [
+      {
+        "type": "PK",
+        "columns": [
+          "invoice_line_id"
+        ],
+        "explainability": {
+          "confidence": "0.97",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "invoice_id"
+        ],
+        "references": {
+          "table": "asm_invoice",
+          "column": "invoice_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.99",
+          "jaccard": "0.99",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.99, jacc=0.99, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.090308
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "track_id"
+        ],
+        "references": {
+          "table": "asm_track",
+          "column": "track_id"
+        },
+        "explainability": {
+          "confidence": "0.80",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "0.47",
+          "jaccard": "0.47",
+          "reason": "inc(A->B)=1.00, inc(B->A)=0.47, jacc=0.47, name=1.00",
+          "target_inbound_refs": 2,
+          "target_centrality": 0.117242
+        }
+      }
+    ],
+    "asm_employee": [
+      {
+        "type": "PK",
+        "columns": [
+          "employee_id"
+        ],
+        "explainability": {
+          "confidence": "1.00",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ],
+    "asm_track": [
+      {
+        "type": "PK",
+        "columns": [
+          "track_id"
+        ],
+        "explainability": {
+          "confidence": "0.98",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "media_type_id"
+        ],
+        "references": {
+          "table": "asm_media_type",
+          "column": "media_type_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.096593
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "genre_id"
+        ],
+        "references": {
+          "table": "asm_genre",
+          "column": "genre_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.096593
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "album_id"
+        ],
+        "references": {
+          "table": "asm_album",
+          "column": "album_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.096593
+        }
+      }
+    ],
+    "asm_invoice": [
+      {
+        "type": "PK",
+        "columns": [
+          "invoice_id"
+        ],
+        "explainability": {
+          "confidence": "0.98",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      },
+      {
+        "type": "FK",
+        "columns": [
+          "customer_id"
+        ],
+        "references": {
+          "table": "asm_customer",
+          "column": "customer_id"
+        },
+        "explainability": {
+          "confidence": "0.85",
+          "inclusion_a_to_b": "1.00",
+          "inclusion_b_to_a": "1.00",
+          "jaccard": "1.00",
+          "reason": "inc(A->B)=1.00, inc(B->A)=1.00, jacc=1.00, name=1.00",
+          "target_inbound_refs": 1,
+          "target_centrality": 0.140136
+        }
+      }
+    ],
+    "asm_customer": [
+      {
+        "type": "PK",
+        "columns": [
+          "customer_id"
+        ],
+        "explainability": {
+          "confidence": "0.99",
+          "uniqueness": "100.0%",
+          "null_rate": "0.0%",
+          "duplicate_rate": "0.0%",
+          "id_score": "2.0",
+          "type_consistency": "1.00",
+          "why_top": "high uniqueness + low nulls + id-like token and strong model score"
+        }
+      }
+    ]
+  }
+}

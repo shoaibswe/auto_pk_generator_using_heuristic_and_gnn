@@ -1,0 +1,3 @@
+{"type":"FunctionalDependency","determinant":{"columnIdentifiers":[{"tableIdentifier":"asm_album.csv","columnIdentifier":"album_id"}]},"dependant":{"tableIdentifier":"asm_album.csv","columnIdentifier":"title"}}
+{"type":"FunctionalDependency","determinant":{"columnIdentifiers":[{"tableIdentifier":"asm_album.csv","columnIdentifier":"album_id"}]},"dependant":{"tableIdentifier":"asm_album.csv","columnIdentifier":"artist_id"}}
+{"type":"FunctionalDependency","determinant":{"columnIdentifiers":[{"tableIdentifier":"asm_album.csv","columnIdentifier":"artist_id"},{"tableIdentifier":"asm_album.csv","columnIdentifier":"title"}]},"dependant":{"tableIdentifier":"asm_album.csv","columnIdentifier":"album_id"}}
